@@ -28,9 +28,13 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.top.equalTo(self.view);
     }];
+    //十秒之后，自动退出，防止网络慢
+    [self performSelector:@selector(backItemClick) withObject:nil afterDelay:20.f];
 }
 
 - (void)backItemClick{
+    [self.class cancelPreviousPerformRequestsWithTarget:self];
+    //
     [self dismissViewControllerAnimated:YES completion:nil];
     if (self.whenRequestComplete) {
         self.whenRequestComplete(self.requestCount);

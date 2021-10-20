@@ -65,8 +65,9 @@
 }
 
 - (void)loadDatasForLocalSqlite{
-    self.linkAddressModel.value = @"https://www.jianshu.com/p/8db5c1bea72c";
-    self.refreshCountModel.value = @"200";
+//    self.linkAddressModel.value = @"https://www.jianshu.com/p/849bd9f8e240";
+    self.linkAddressModel.value = @"https://www.jianshu.com/p/8dd8e0e3a754";
+    self.refreshCountModel.value = @"4000";
 }
 
 - (void)viewWillLayoutSubviews{

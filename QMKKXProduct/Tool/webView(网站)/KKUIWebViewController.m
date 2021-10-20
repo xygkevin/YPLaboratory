@@ -57,8 +57,8 @@
 }
 //添加js交互
 - (void)addScriptMessageHandler{
-//    WKWebViewConfiguration *configuration = self.webView.configuration;
-//    [configuration.userContentController addScriptMessageHandler:self name:@"Share"];
+    WKWebViewConfiguration *configuration = self.webView.configuration;
+    [configuration.userContentController addScriptMessageHandler:self name:@"Share"];
 }
 //移除js交互
 - (void)removeScriptMessageHandlerForName{

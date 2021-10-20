@@ -63,7 +63,7 @@ static NSString *OK = @"0";
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     [data addEntriesFromDictionary:parameters];
     NSLog(@"*******************************************************");
-    NSLog(@"Method:POST");
+    NSLog(@"Method:GET");
     NSLog(@"URL:%@",url);
     NSLog(@"Parameters:%@",data.mj_JSONString);
     NSLog(@"*******************************************************");
