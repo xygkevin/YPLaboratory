@@ -9,22 +9,24 @@
 #import "KKImageBrowser.h"
 
 @interface KKImageBrowser ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-@property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
-@property (strong, nonatomic) UICollectionView *collectionView;
-@property (assign, nonatomic) BOOL cacheStatusBarHidden;
-@property (assign, nonatomic) UIView *weakView;
-@property (strong, nonatomic) UIImageView *placeholderView;//占位试图
-@property (strong, nonatomic) UIView *backgroundView;//背景试图
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, assign) BOOL cacheStatusBarHidden;
+@property (nonatomic, assign) UIView *weakView;
+@property (nonatomic, strong) UIImageView *placeholderView;//占位试图
+@property (nonatomic, strong) UIView *backgroundView;//背景试图
 
 @end
 
 @implementation KKImageBrowser
+
 - (instancetype)init{
     if (self = [super init]) {
         [self setupSubviews];
     }
     return self;
 }
+
 - (void)setupSubviews{
     //
     self.backgroundView = [[UIView alloc] init];
@@ -49,6 +51,7 @@
     self.placeholderView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:self.placeholderView];
 }
+
 - (void)removeShow{
     //复原状态栏
     #pragma clang diagnostic push
@@ -79,6 +82,7 @@
         [self removeFromSuperview];
     }];
 }
+
 //展示
 - (void)show{
     if (self.images.count == 0) {
@@ -129,10 +133,12 @@
     }];
     [window addSubview:self];
 }
+
 - (void)setImages:(NSArray<KKImageBrowserModel *> *)images{
     _images = images;
     [self.collectionView reloadData];
 }
+
 #pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     KKImageBrowserModel *cellModel = self.images[indexPath.row];
@@ -154,15 +160,19 @@
     };
     return cell;
 }
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.images.count;
 }
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return self.frame.size;
 }
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self whenNeedChangeWeakView];
 }
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if (decelerate) {
         //进入，不操作
@@ -171,6 +181,7 @@
         [self whenNeedChangeWeakView];
     }
 }
+
 //需要修改weakview
 - (void)whenNeedChangeWeakView{
     CGPoint point = self.collectionView.contentOffset;
@@ -180,7 +191,9 @@
     self.weakView = cellModel.toView;
     [self.placeholderView kk_setImageWithUrl:cellModel.url.absoluteString];
 }
+
 - (void)dealloc{
     NSLog(@"隐藏");
 }
+
 @end

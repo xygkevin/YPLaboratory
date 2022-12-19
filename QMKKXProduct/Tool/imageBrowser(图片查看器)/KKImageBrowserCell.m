@@ -9,6 +9,7 @@
 #import "KKImageBrowserCell.h"
 
 @implementation KKImageBrowserModel
+
 /// 快速创建model
 /// @param url url
 /// @param type 类型
@@ -19,6 +20,7 @@
     }
     return self;
 }
+
 /// 快速创建model
 /// @param image image
 - (instancetype)initWithImage:(UIImage *)image{
@@ -28,23 +30,28 @@
     }
     return self;
 }
+
 @end
 
 @interface KKImageBrowserCell ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
+
 @property (strong, nonatomic) UITapGestureRecognizer *tapTwoGestureRecognizer;
 @property (strong, nonatomic) UITapGestureRecognizer *tapOneGestureRecognizer;
 @property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
 //
 @property (assign, nonatomic) CGPoint panBeginPoint;
+
 @end
 
 @implementation KKImageBrowserCell
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self setupSubviews];
     }
     return self;
 }
+
 - (void)setupSubviews{
     self.backgroundColor = KKColor_CLEAR;
     //
@@ -65,6 +72,7 @@
     //
     [self addGestureRecognizer];
 }
+
 - (void)addGestureRecognizer{
     self.tapOneGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(whenTapOneClick:)];
     [self addGestureRecognizer:self.tapOneGestureRecognizer];
@@ -80,6 +88,7 @@
     [self.tapOneGestureRecognizer requireGestureRecognizerToFail:self.panGestureRecognizer];
     [self.tapTwoGestureRecognizer requireGestureRecognizerToFail:self.panGestureRecognizer];
 }
+
 //单击手势
 - (void)whenTapOneClick:(id)sender{
     //单击
@@ -87,6 +96,7 @@
         self.whenActionClick(self,0);
     }
 }
+
 //双击手势
 - (void)whenTapTwoClick:(UITapGestureRecognizer *)sender{
     //双击
@@ -117,6 +127,7 @@
         [scrollView zoomToRect:CGRectMake(x, y, width, height) animated:YES];
     }
 }
+
 //拖动手势
 - (void)whenPanClick:(UIPanGestureRecognizer *)sender{
     //如果上级已经在滚动中，则取消当前试图移动手势
@@ -161,6 +172,7 @@
         self.scrollView.transform = CGAffineTransformMakeScale(value, value);
     }
 }
+
 - (void)setCellModel:(KKImageBrowserModel *)cellModel{
     _cellModel = cellModel;
     self.scrollView.zoomScale = 1.0f;
@@ -170,6 +182,7 @@
         [self.browserImageView kk_setImageWithUrl:cellModel.url.absoluteString];
     }
 }
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     CGRect bounds = self.contentView.bounds;
@@ -179,14 +192,17 @@
     CGRect f2 = bounds;
     self.scrollView.frame = f2;
 }
+
 #pragma mark - UIScrollViewDelegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.browserImageView;
 }
+
 //缩放中
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView{
     
 }
+
 //移动中
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.isZooming) {
@@ -195,6 +211,7 @@
         //单纯移动
     }
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
         CGPoint translation = [(UIPanGestureRecognizer*)gestureRecognizer translationInView:self];
@@ -207,4 +224,5 @@
         return YES;
     }
 }
+
 @end

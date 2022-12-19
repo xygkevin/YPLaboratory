@@ -545,8 +545,12 @@
 		60F865AE23D1585600CCEA70 /* KKVideoPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60F865AA23D1585600CCEA70 /* KKVideoPlayViewController.xib */; };
 		60FA64C123ED9272008BD3AD /* UIAlertController+KExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FA64C023ED9272008BD3AD /* UIAlertController+KExtension.m */; };
 		60FA64C223ED9272008BD3AD /* UIAlertController+KExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FA64C023ED9272008BD3AD /* UIAlertController+KExtension.m */; };
+		8F6FB19A273BB66E008AEF6A /* KKAutoContentScrollDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FB199273BB66E008AEF6A /* KKAutoContentScrollDownView.m */; };
+		8F6FB19B273BB66E008AEF6A /* KKAutoContentScrollDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FB199273BB66E008AEF6A /* KKAutoContentScrollDownView.m */; };
 		8FB9744226DC762800540825 /* KKBlackTechnologyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9744126DC762800540825 /* KKBlackTechnologyViewController.m */; };
 		8FB9744326DC762800540825 /* KKBlackTechnologyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB9744126DC762800540825 /* KKBlackTechnologyViewController.m */; };
+		8FC719562738F6BA005E29AC /* KKArrowContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC719552738F6BA005E29AC /* KKArrowContainerView.m */; };
+		8FC719572738F6BA005E29AC /* KKArrowContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC719552738F6BA005E29AC /* KKArrowContainerView.m */; };
 		8FE2B39F26EB30A30023909C /* KKBrushFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2B39E26EB30A30023909C /* KKBrushFlowViewController.m */; };
 		8FE2B3A026EB30A30023909C /* KKBrushFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2B39E26EB30A30023909C /* KKBrushFlowViewController.m */; };
 		8FE2B3A326EB3E700023909C /* KKBrushFlowToolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2B3A226EB3E700023909C /* KKBrushFlowToolViewController.m */; };
@@ -1041,8 +1045,12 @@
 		60FA64C023ED9272008BD3AD /* UIAlertController+KExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+KExtension.m"; sourceTree = "<group>"; };
 		6F04FEFD3CAE842206C75D73 /* Pods-QMKKXProduct.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMKKXProduct.debug.xcconfig"; path = "Target Support Files/Pods-QMKKXProduct/Pods-QMKKXProduct.debug.xcconfig"; sourceTree = "<group>"; };
 		802FBF4AB36D97B0B02D7068 /* Pods_QMKKXProduct.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QMKKXProduct.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F6FB198273BB66E008AEF6A /* KKAutoContentScrollDownView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKAutoContentScrollDownView.h; sourceTree = "<group>"; };
+		8F6FB199273BB66E008AEF6A /* KKAutoContentScrollDownView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKAutoContentScrollDownView.m; sourceTree = "<group>"; };
 		8FB9744026DC762800540825 /* KKBlackTechnologyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBlackTechnologyViewController.h; sourceTree = "<group>"; };
 		8FB9744126DC762800540825 /* KKBlackTechnologyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBlackTechnologyViewController.m; sourceTree = "<group>"; };
+		8FC719542738F6BA005E29AC /* KKArrowContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKArrowContainerView.h; sourceTree = "<group>"; };
+		8FC719552738F6BA005E29AC /* KKArrowContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKArrowContainerView.m; sourceTree = "<group>"; };
 		8FE2B39D26EB30A30023909C /* KKBrushFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBrushFlowViewController.h; sourceTree = "<group>"; };
 		8FE2B39E26EB30A30023909C /* KKBrushFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKBrushFlowViewController.m; sourceTree = "<group>"; };
 		8FE2B3A126EB3E700023909C /* KKBrushFlowToolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKBrushFlowToolViewController.h; sourceTree = "<group>"; };
@@ -1757,6 +1765,8 @@
 				30E2077F237975AA00EE3E8E /* KKLabStudioViewController.h */,
 				30E20780237975AA00EE3E8E /* KKLabStudioViewController.m */,
 				30E20781237975AA00EE3E8E /* KKLabStudioViewController.xib */,
+				8F6FB197273BB614008AEF6A /* roll */,
+				8F6FB196273BB60A008AEF6A /* arrow */,
 			);
 			path = "工作台";
 			sourceTree = "<group>";
@@ -2577,6 +2587,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8F6FB196273BB60A008AEF6A /* arrow */ = {
+			isa = PBXGroup;
+			children = (
+				8FC719542738F6BA005E29AC /* KKArrowContainerView.h */,
+				8FC719552738F6BA005E29AC /* KKArrowContainerView.m */,
+			);
+			path = arrow;
+			sourceTree = "<group>";
+		};
+		8F6FB197273BB614008AEF6A /* roll */ = {
+			isa = PBXGroup;
+			children = (
+				8F6FB198273BB66E008AEF6A /* KKAutoContentScrollDownView.h */,
+				8F6FB199273BB66E008AEF6A /* KKAutoContentScrollDownView.m */,
+			);
+			path = roll;
+			sourceTree = "<group>";
+		};
 		8FB9743F26DC75EB00540825 /* 黑科技 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2664,7 +2692,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KK;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "力王工作室";
 				TargetAttributes = {
 					30036DA322B9D76900605DF7 = {
@@ -3154,6 +3182,8 @@
 				3077A33922BA45A400372F07 /* NSArray+KExtension.m in Sources */,
 				3028979422C46DEF000F2669 /* KKUIFlowLayoutButton.m in Sources */,
 				30917401237AAFDD00010E99 /* KKAppIconTableViewCell.m in Sources */,
+				8F6FB19B273BB66E008AEF6A /* KKAutoContentScrollDownView.m in Sources */,
+				8FC719572738F6BA005E29AC /* KKArrowContainerView.m in Sources */,
 				6097E5DB24971F25007ECC55 /* KKDropdownBoxViewController.m in Sources */,
 				302897BE22C46DEF000F2669 /* KKTextField.m in Sources */,
 				60BEE01A2669E3C0001E580E /* KKWKURLSchemeHandler.m in Sources */,
@@ -3364,6 +3394,8 @@
 				3077A33822BA45A400372F07 /* NSArray+KExtension.m in Sources */,
 				3028979322C46DEF000F2669 /* KKUIFlowLayoutButton.m in Sources */,
 				30917400237AAFDD00010E99 /* KKAppIconTableViewCell.m in Sources */,
+				8F6FB19A273BB66E008AEF6A /* KKAutoContentScrollDownView.m in Sources */,
+				8FC719562738F6BA005E29AC /* KKArrowContainerView.m in Sources */,
 				6097E5DA24971F25007ECC55 /* KKDropdownBoxViewController.m in Sources */,
 				302897BD22C46DEF000F2669 /* KKTextField.m in Sources */,
 				60BEE0192669E3C0001E580E /* KKWKURLSchemeHandler.m in Sources */,
@@ -3453,7 +3485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -3508,7 +3540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -3526,6 +3558,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QMKKXProduct/Main/Home(实验室)/controller/第三方分享&登陆&支付/AliSDK15.7.6",
@@ -3563,6 +3597,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QMKKXProduct/Main/Home(实验室)/controller/第三方分享&登陆&支付/AliSDK15.7.6",
@@ -3600,6 +3636,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
+				ENABLE_BITCODE = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QMKKXProduct/Main/Home(实验室)/controller/第三方分享&登陆&支付/AliSDK15.7.6",
@@ -3620,6 +3659,7 @@
 					"\"$(SRCROOT)/QMKKXProduct/Main/Home(实验室)/controller/第三方分享&登陆&支付/WeChatSDK1.8.7.1\"",
 				);
 				MARKETING_VERSION = 3.3.2;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwgzs.qimkkx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3637,6 +3677,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
+				ENABLE_BITCODE = NO;
+				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QMKKXProduct/Main/Home(实验室)/controller/第三方分享&登陆&支付/AliSDK15.7.6",

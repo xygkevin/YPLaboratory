@@ -1,5 +1,5 @@
 
-# platform :ios, '9.0'
+platform :ios, '12.0'
 inhibit_all_warnings!
 
 target 'QMKKXProduct' do
@@ -15,8 +15,8 @@ target 'QMKKXProduct' do
   pod 'MBProgressHUD', '1.2.0'
   pod 'lottie-ios','2.5.3'
   pod 'Bugly','2.5.5'#bug反馈
-  pod 'JCore','2.1.4-noidfa'
-  pod 'JPush','3.2.4-noidfa'
+  pod 'JCore','3.2.0'
+  pod 'JPush','4.6.4'
   pod 'FMDB' , '2.7.2'
   
   #高德地图
@@ -40,8 +40,8 @@ target 'QMKKXProductDev' do
   pod 'MBProgressHUD', '1.2.0'
   pod 'lottie-ios','2.5.3'
   pod 'Bugly','2.5.5'#bug反馈
-  pod 'JCore','2.1.4-noidfa'
-  pod 'JPush','3.2.4-noidfa'
+  pod 'JCore','3.2.0'
+  pod 'JPush','4.6.4'
   pod 'FMDB' , '2.7.2'
   
   #高德地图
@@ -52,13 +52,14 @@ target 'QMKKXProductDev' do
   pod 'AMapFoundation', '1.6.2'
 end
 
-#消除waring
 post_install do |installer|
   installer.pods_project.targets.each do |target|
+    puts target
     target.build_configurations.each do |config|
-      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 8.0
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '8.0'
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 12.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
       end
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
     end
   end
 end

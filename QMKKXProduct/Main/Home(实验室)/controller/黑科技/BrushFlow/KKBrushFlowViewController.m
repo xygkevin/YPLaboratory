@@ -66,7 +66,7 @@
 
 - (void)loadDatasForLocalSqlite{
 //    self.linkAddressModel.value = @"https://www.jianshu.com/p/849bd9f8e240";
-    self.linkAddressModel.value = @"https://www.jianshu.com/p/8dd8e0e3a754";
+    self.linkAddressModel.value = @"https://juejin.cn/post/7154285769723969549";
     self.refreshCountModel.value = @"4000";
 }
 

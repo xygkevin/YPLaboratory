@@ -39,6 +39,10 @@
     //log
     NSString *docuPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSLog(@"🚀🚀🚀\n文件存储地址：%@\n🚀🚀🚀",docuPath);
+    
+    NSLog(@"%d",(NO != nil));
+    NSLog(@"%d",(YES != nil));
+    
     return YES;
 }
 //设置根试图

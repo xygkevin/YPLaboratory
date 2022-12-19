@@ -8,6 +8,8 @@
 
 #import "KKLabStudioViewController.h"
 #import "AppDelegate.h"
+#import "KKArrowContainerView.h"
+#import "KKAutoContentScrollDownView.h"
 
 @interface KKLabStudioViewController () <UIDocumentPickerDelegate>
 
@@ -17,17 +19,146 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) KKAutoContentScrollDownView *rollView;
+@property (nonatomic, assign) NSInteger indexRow;
 
 @end
 
-@implementation KKLabStudioViewController
+@implementation KKLabStudioViewController{
+    KKArrowContainerView *_containerView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.indexRow = 0;
     self.button = [[UIButton alloc] init];
+    self.button.backgroundColor = [UIColor redColor];
+    self.button.layer.cornerRadius = 15.f;
+    [self.button setTitle:[UIFont familyNames][self.indexRow] forState:UIControlStateNormal];
     [self.view addSubview:self.button];
+    [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.offset(200.f);
+        make.height.offset(30.f);
+        make.center.equalTo(self.view);
+    }];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:YES handler:^(NSTimer *timer) {
+        [self startAnimate];
+    }];
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self downLoadWithFilePath:@"http://jadinec-test.oss-accelerate.aliyuncs.com/excelFile/a5f23e130d5e4dd7adda942c45207927.pdf"];
+}
+
+- (void)startAnimate {
+    [self firstStageAnimate];
+}
+
+- (void)firstStageAnimate {
+    self.button.transform = CGAffineTransformIdentity;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.button.transform = CGAffineTransformScale(self.button.transform, 1.0, 0.01);
+    } completion:^(BOOL finished) {
+        [self secondStageAnimate];
+    }];
+}
+
+- (void)secondStageAnimate {
+    self.indexRow ++;
+    [self.button setTitle:[UIFont familyNames][self.indexRow] forState:UIControlStateNormal];
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.button.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
+#pragma mark - 下载文件
+/// http://jadinec-test.oss-accelerate.aliyuncs.com/excelFile/a5f23e130d5e4dd7adda942c45207927.pdf
+- (void)downLoadWithFilePath:(NSString *)filePath {
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version >= 11) {
+        
+    } else {
+        [self showError:@"下载文件要求手机系统版本在11.0以上"];
+        return;
+    }
+    /**
+    /// 保存网络文件到沙盒一
+    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:filePath]];
+    NSData *fileData = [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+    NSString *temp = NSTemporaryDirectory();
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *fullPath = [self getNativeFilePath:[filePath componentsSeparatedByString:@"/"].lastObject];
+    BOOL downResult = [fm createFileAtPath:fullPath contents:fileData attributes:nil];
+    */
+    /// 保存网络文件到沙盒二
+    NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
+    NSString *fullPath = [self getNativeFilePath:[filePath componentsSeparatedByString:@"/"].lastObject];
+    BOOL downResult = [fileData writeToFile:fullPath atomically:YES];
+    
+    if (downResult) {
+        UIDocumentPickerViewController *documentPickerVC = [[UIDocumentPickerViewController alloc] initWithURL:[NSURL fileURLWithPath:fullPath] inMode:UIDocumentPickerModeExportToService];
+        // 设置代理
+        documentPickerVC.delegate = self;
+        // 设置模态弹出方式
+        documentPickerVC.modalPresentationStyle = UIModalPresentationFormSheet;
+        [self.navigationController presentViewController:documentPickerVC animated:YES completion:nil];
+    }
+}
+ 
+// 获得文件沙盒地址
+- (NSString *)getNativeFilePath:(NSString *)fileName {
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *munu = [NSString stringWithFormat:@"%@/%@",@"downLoad",fileName];
+    NSString *filePath = [path stringByAppendingPathComponent:munu];
+    // 判断是否存在,不存在则创建
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    // fileExistsAtPath 判断一个文件或目录是否有效，isDirectory判断是否一个目录
+    BOOL isDir = NO;
+    NSMutableArray *theArr = [[filePath componentsSeparatedByString:@"/"] mutableCopy];
+    [theArr removeLastObject];
+    NSString *thePath = [theArr componentsJoinedByString:@"/"];
+    BOOL existed = [fileManager fileExistsAtPath:thePath isDirectory:&isDir];
+    if ( !(isDir == YES && existed == YES) ) { // 如果文件夹不存在
+        [fileManager createDirectoryAtPath:thePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return filePath;
+}
+ 
+#pragma mark - UIDocumentPickerDelegate
+ 
+- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
+    // 获取授权
+    BOOL fileUrlAuthozied = [urls.firstObject startAccessingSecurityScopedResource];
+    if (fileUrlAuthozied) {
+        // 通过文件协调工具来得到新的文件地址，以此得到文件保护功能
+        NSFileCoordinator *fileCoordinator = [[NSFileCoordinator alloc] init];
+        NSError *error;
+        
+        [fileCoordinator coordinateReadingItemAtURL:urls.firstObject options:0 error:&error byAccessor:^(NSURL *newURL) {
+            // 读取文件
+            NSString *fileName = [newURL lastPathComponent];
+            NSError *error = nil;
+            NSData *fileData = [NSData dataWithContentsOfURL:newURL options:NSDataReadingMappedIfSafe error:&error];
+            NSLog(@"%@",fileData);
+            if (error) {
+                // 读取出错
+            } else {
+                // 上传
+                NSLog(@"fileName : %@", fileName);
+            }
+        }];
+        [urls.firstObject stopAccessingSecurityScopedResource];
+    } else {
+        // 授权失败
+    }
+}
+
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
