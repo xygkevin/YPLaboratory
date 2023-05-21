@@ -12,5 +12,7 @@
 #import "YPNavigationViewController.h"
 #import "YPRouterManager.h"
 #import "YPSettingManager.h"
+#import "YPNoticeHeader.h"
+#import "YPTrackingManager.h"
 
 #endif /* YPLaboratoryToolsHeader_h */

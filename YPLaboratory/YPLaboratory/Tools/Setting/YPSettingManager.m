@@ -7,7 +7,6 @@
 
 #import "YPSettingManager.h"
 #import <StoreKit/StoreKit.h>
-#import "YPPromptsManager.h"
 
 NSString *const kYPUserDefaultsServerVersionKey = @"kYPUserDefaultsServerVersionKey";// 服务版本
 NSString *const kYPUserDefaultsForceUpdateKey = @"kYPUserDefaultsForceUpdateKey";// 是否强更
@@ -45,7 +44,7 @@ NSString *const kYPUserDefaultsExtendKey = @"kYPUserDefaultsExtendKey";// 扩展
 }
 
 - (void)showAppstore {
-    NSString *appid = [self appid];
+    NSString *appId = [self appid];
     NSURL *appStoreURL = [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@", appId]];
     if ([[UIApplication sharedApplication] canOpenURL:appStoreURL]) {
         [[UIApplication sharedApplication] openURL:appStoreURL options:@{} completionHandler:nil];

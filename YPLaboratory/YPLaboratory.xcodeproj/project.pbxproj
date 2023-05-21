@@ -15,6 +15,16 @@
 		60257FDC2A1A25BD00091000 /* UIViewController+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FDB2A1A25BD00091000 /* UIViewController+Router.m */; };
 		60257FE72A1A400C00091000 /* YPSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FE22A1A400C00091000 /* YPSettingManager.m */; };
 		60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FE52A1A400C00091000 /* YPLaboratoryDevice.m */; };
+		60257FF02A1A452100091000 /* YPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FEA2A1A452100091000 /* YPNetworking.m */; };
+		60257FF12A1A452100091000 /* YPHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FEB2A1A452100091000 /* YPHTTPResponse.m */; };
+		60257FF22A1A452100091000 /* YPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FEC2A1A452100091000 /* YPHTTPRequest.m */; };
+		60257FFA2A1A5B8200091000 /* YPHTTPInitiateRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FF92A1A5B8200091000 /* YPHTTPInitiateRequest.m */; };
+		60257FFD2A1A5F2400091000 /* AppDelegate+YPThird.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FFC2A1A5F2400091000 /* AppDelegate+YPThird.m */; };
+		602580002A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FFF2A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m */; };
+		602580042A1A5FC400091000 /* YPNoticeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 602580022A1A5FC400091000 /* YPNoticeHeader.m */; };
+		6025800A2A1A604F00091000 /* TapDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602580062A1A604F00091000 /* TapDB.framework */; };
+		6025800B2A1A604F00091000 /* TapCommonSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602580082A1A604F00091000 /* TapCommonSDK.framework */; };
+		6025800C2A1A604F00091000 /* YPTrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 602580092A1A604F00091000 /* YPTrackingManager.m */; };
 		6034B2562A1485D80024E610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2552A1485D80024E610 /* AppDelegate.m */; };
 		6034B25F2A1485D80024E610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034B25D2A1485D80024E610 /* Main.storyboard */; };
 		6034B2612A1485D90024E610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6034B2602A1485D90024E610 /* Assets.xcassets */; };
@@ -73,6 +83,24 @@
 		60257FE22A1A400C00091000 /* YPSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSettingManager.m; sourceTree = "<group>"; };
 		60257FE42A1A400C00091000 /* YPLaboratoryDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPLaboratoryDevice.h; sourceTree = "<group>"; };
 		60257FE52A1A400C00091000 /* YPLaboratoryDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPLaboratoryDevice.m; sourceTree = "<group>"; };
+		60257FEA2A1A452100091000 /* YPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPNetworking.m; sourceTree = "<group>"; };
+		60257FEB2A1A452100091000 /* YPHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPHTTPResponse.m; sourceTree = "<group>"; };
+		60257FEC2A1A452100091000 /* YPHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPHTTPRequest.m; sourceTree = "<group>"; };
+		60257FED2A1A452100091000 /* YPHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPHTTPResponse.h; sourceTree = "<group>"; };
+		60257FEE2A1A452100091000 /* YPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPNetworking.h; sourceTree = "<group>"; };
+		60257FEF2A1A452100091000 /* YPHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPHTTPRequest.h; sourceTree = "<group>"; };
+		60257FF82A1A5B8200091000 /* YPHTTPInitiateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPHTTPInitiateRequest.h; sourceTree = "<group>"; };
+		60257FF92A1A5B8200091000 /* YPHTTPInitiateRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPHTTPInitiateRequest.m; sourceTree = "<group>"; };
+		60257FFB2A1A5F2400091000 /* AppDelegate+YPThird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+YPThird.h"; sourceTree = "<group>"; };
+		60257FFC2A1A5F2400091000 /* AppDelegate+YPThird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+YPThird.m"; sourceTree = "<group>"; };
+		60257FFE2A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPHTTPVerifyPaymentRequest.h; sourceTree = "<group>"; };
+		60257FFF2A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPHTTPVerifyPaymentRequest.m; sourceTree = "<group>"; };
+		602580022A1A5FC400091000 /* YPNoticeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPNoticeHeader.m; sourceTree = "<group>"; };
+		602580032A1A5FC400091000 /* YPNoticeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPNoticeHeader.h; sourceTree = "<group>"; };
+		602580062A1A604F00091000 /* TapDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TapDB.framework; sourceTree = "<group>"; };
+		602580072A1A604F00091000 /* YPTrackingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTrackingManager.h; sourceTree = "<group>"; };
+		602580082A1A604F00091000 /* TapCommonSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TapCommonSDK.framework; sourceTree = "<group>"; };
+		602580092A1A604F00091000 /* YPTrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTrackingManager.m; sourceTree = "<group>"; };
 		6034B2512A1485D80024E610 /* YPLaboratory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YPLaboratory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034B2542A1485D80024E610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6034B2552A1485D80024E610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -159,7 +187,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6025800A2A1A604F00091000 /* TapDB.framework in Frameworks */,
 				17B65EBA9D4EF60CD769BD61 /* Pods_YPLaboratory.framework in Frameworks */,
+				6025800B2A1A604F00091000 /* TapCommonSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +239,50 @@
 			path = Device;
 			sourceTree = "<group>";
 		};
+		60257FE92A1A452100091000 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60257FEE2A1A452100091000 /* YPNetworking.h */,
+				60257FEA2A1A452100091000 /* YPNetworking.m */,
+				60257FEF2A1A452100091000 /* YPHTTPRequest.h */,
+				60257FEC2A1A452100091000 /* YPHTTPRequest.m */,
+				60257FED2A1A452100091000 /* YPHTTPResponse.h */,
+				60257FEB2A1A452100091000 /* YPHTTPResponse.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60257FF72A1A5B7400091000 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				60257FF82A1A5B8200091000 /* YPHTTPInitiateRequest.h */,
+				60257FF92A1A5B8200091000 /* YPHTTPInitiateRequest.m */,
+				60257FFE2A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.h */,
+				60257FFF2A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		602580012A1A5FC400091000 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				602580032A1A5FC400091000 /* YPNoticeHeader.h */,
+				602580022A1A5FC400091000 /* YPNoticeHeader.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		602580052A1A604F00091000 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				602580062A1A604F00091000 /* TapDB.framework */,
+				602580082A1A604F00091000 /* TapCommonSDK.framework */,
+				602580072A1A604F00091000 /* YPTrackingManager.h */,
+				602580092A1A604F00091000 /* YPTrackingManager.m */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
 		6034B2482A1485D80024E610 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +306,8 @@
 			children = (
 				6034B2542A1485D80024E610 /* AppDelegate.h */,
 				6034B2552A1485D80024E610 /* AppDelegate.m */,
+				60257FFB2A1A5F2400091000 /* AppDelegate+YPThird.h */,
+				60257FFC2A1A5F2400091000 /* AppDelegate+YPThird.m */,
 				6034B2822A14A5EF0024E610 /* Category */,
 				6034B2812A14A5E80024E610 /* Tools */,
 				6034B2802A14A5CE0024E610 /* Main */,
@@ -278,6 +354,10 @@
 			isa = PBXGroup;
 			children = (
 				6034B2F02A14A8620024E610 /* YPLaboratoryTools.h */,
+				602580052A1A604F00091000 /* Tracking */,
+				602580012A1A5FC400091000 /* Notification */,
+				60257FF72A1A5B7400091000 /* Requests */,
+				60257FE92A1A452100091000 /* Network */,
 				60257FDD2A1A400C00091000 /* Setting */,
 				60C44E7E2A186C970073EA3F /* PageRouter */,
 				6034B2E92A14A77C0024E610 /* Base */,
@@ -530,18 +610,22 @@
 				6034B2DF2A14A6E40024E610 /* NSBundle+YPLaboratory.m in Sources */,
 				6034B2DE2A14A6E40024E610 /* NSTimer+YPLaboratory.m in Sources */,
 				6034B2E32A14A6E40024E610 /* UILabel+YPLaboratory.m in Sources */,
+				6025800C2A1A604F00091000 /* YPTrackingManager.m in Sources */,
 				6034B2DC2A14A6E40024E610 /* UIImage+YPLaboratory.m in Sources */,
 				60257FDC2A1A25BD00091000 /* UIViewController+Router.m in Sources */,
 				6034B2E02A14A6E40024E610 /* UIColor+YPLaboratory.m in Sources */,
 				6034B2EF2A14A82A0024E610 /* YPNavigationViewController.m in Sources */,
 				6034B2D92A14A6E40024E610 /* UIView+YPLaboratory.m in Sources */,
+				60257FF02A1A452100091000 /* YPNetworking.m in Sources */,
 				6034B30C2A14A99A0024E610 /* YPWorldTableViewCell.m in Sources */,
 				6034B2862A14A64E0024E610 /* YPRootViewController.m in Sources */,
 				60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */,
 				60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */,
 				60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */,
 				60257FD52A1A15A100091000 /* YPModuleTableTableViewCell.m in Sources */,
+				60257FF12A1A452100091000 /* YPHTTPResponse.m in Sources */,
 				6034B2DA2A14A6E40024E610 /* UIScrollView+YPLaboratory.m in Sources */,
+				602580042A1A5FC400091000 /* YPNoticeHeader.m in Sources */,
 				6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */,
 				6034B2E72A14A6E40024E610 /* UIImageView+YPLaboratory.m in Sources */,
 				60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */,
@@ -551,8 +635,11 @@
 				6034B2E12A14A6E40024E610 /* UITextField+YPLaboratory.m in Sources */,
 				60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */,
 				60257FD92A1A15A100091000 /* YPModuleTableViewModel.m in Sources */,
+				602580002A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m in Sources */,
+				60257FF22A1A452100091000 /* YPHTTPRequest.m in Sources */,
 				6034B31D2A14A9D90024E610 /* YPUserModel.m in Sources */,
 				6034B2EC2A14A7940024E610 /* YPBaseViewController.m in Sources */,
+				60257FFA2A1A5B8200091000 /* YPHTTPInitiateRequest.m in Sources */,
 				6034B2E62A14A6E40024E610 /* NSDictionary+YPLaboratory.m in Sources */,
 				6034B2562A1485D80024E610 /* AppDelegate.m in Sources */,
 				6034B2E22A14A6E40024E610 /* NSDate+YPLaboratory.m in Sources */,
@@ -561,6 +648,7 @@
 				6034B31E2A14A9D90024E610 /* YPUserProxy.m in Sources */,
 				6034B31C2A14A9D90024E610 /* YPUserTableViewCell.m in Sources */,
 				6034B31F2A14A9D90024E610 /* YPUserViewController.m in Sources */,
+				60257FFD2A1A5F2400091000 /* AppDelegate+YPThird.m in Sources */,
 				6034B2E52A14A6E40024E610 /* UITableViewCell+YPLaboratory.m in Sources */,
 				6034B2DB2A14A6E40024E610 /* UIViewController+YPLaboratory.m in Sources */,
 				6034B3102A14A99A0024E610 /* YPWorldViewModel.m in Sources */,
@@ -732,6 +820,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YPLaboratory/Tools/Tracking",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YPLaboratory/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YPLaboratory/Info.plist;
@@ -762,6 +854,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YPLaboratory/Tools/Tracking",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/YPLaboratory/PrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YPLaboratory/Info.plist;

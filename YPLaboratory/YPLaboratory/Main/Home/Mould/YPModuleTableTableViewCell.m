@@ -11,6 +11,7 @@
 @interface YPModuleTableTableViewCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *contentLabel;
 
 @end
 
@@ -28,11 +29,13 @@
 
 - (void)setupSubViews {
     [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.contentLabel];
 }
 
 - (void)setCellModel:(YPPageRouter *)cellModel {
     _cellModel = cellModel;
     self.titleLabel.text = cellModel.title?:@"";
+    self.contentLabel.text = cellModel.content?:@"";
 }
 
 - (void)layoutSubviews {
@@ -42,6 +45,11 @@
     f1.origin.x = 20.f;
     f1.size.width = bounds.size.width - f1.origin.x * 2;
     self.titleLabel.frame = f1;
+    
+    CGRect f2 = bounds;
+    f2.size.width = [self.contentLabel sizeThatFits:CGSizeMake(100.f, 0)].width;
+    f2.origin.x = bounds.size.width - f2.size.width - 5.f;
+    self.contentLabel.frame = f2;
 }
 
 #pragma mark - getters | setters
@@ -53,6 +61,15 @@
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
+}
+
+- (UILabel *)contentLabel {
+    if (!_contentLabel) {
+        _contentLabel = [[UILabel alloc] init];
+        _contentLabel.font = [UIFont systemFontOfSize:16.f];
+        _contentLabel.textColor = [UIColor yp_grayColor];
+    }
+    return _contentLabel;
 }
 
 @end
