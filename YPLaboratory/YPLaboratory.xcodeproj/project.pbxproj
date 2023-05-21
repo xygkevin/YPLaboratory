@@ -8,26 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		17B65EBA9D4EF60CD769BD61 /* Pods_YPLaboratory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */; };
-		60247AC82A177AC1004155AD /* YPAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247ABE2A177AC1004155AD /* YPAboutUsTableViewCell.m */; };
-		60247AC92A177AC1004155AD /* YPAboutUsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AC02A177AC1004155AD /* YPAboutUsModel.m */; };
-		60247ACA2A177AC1004155AD /* YPAboutUsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AC12A177AC1004155AD /* YPAboutUsProxy.m */; };
-		60247ACB2A177AC1004155AD /* YPAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AC52A177AC1004155AD /* YPAboutUsViewController.m */; };
-		60247ACC2A177AC1004155AD /* YPAboutUsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AC62A177AC1004155AD /* YPAboutUsViewModel.m */; };
-		60247AE72A178030004155AD /* YPUIComponentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247ADD2A178030004155AD /* YPUIComponentTableViewCell.m */; };
-		60247AE82A178030004155AD /* YPUIComponentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247ADF2A178030004155AD /* YPUIComponentModel.m */; };
-		60247AE92A178030004155AD /* YPUIComponentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AE02A178030004155AD /* YPUIComponentProxy.m */; };
-		60247AEA2A178030004155AD /* YPUIComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AE42A178030004155AD /* YPUIComponentViewController.m */; };
-		60247AEB2A178030004155AD /* YPUIComponentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AE52A178030004155AD /* YPUIComponentViewModel.m */; };
-		60247AF72A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AED2A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.m */; };
-		60247AF82A1780A8004155AD /* YPAppleInternalPurchaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AEF2A1780A8004155AD /* YPAppleInternalPurchaseModel.m */; };
-		60247AF92A1780A8004155AD /* YPAppleInternalPurchaseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AF02A1780A8004155AD /* YPAppleInternalPurchaseProxy.m */; };
-		60247AFA2A1780A8004155AD /* YPAppleInternalPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AF42A1780A8004155AD /* YPAppleInternalPurchaseViewController.m */; };
-		60247AFB2A1780A8004155AD /* YPAppleInternalPurchaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60247AF52A1780A8004155AD /* YPAppleInternalPurchaseViewModel.m */; };
 		60257FD52A1A15A100091000 /* YPModuleTableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FCB2A1A15A100091000 /* YPModuleTableTableViewCell.m */; };
 		60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FCE2A1A15A100091000 /* YPModuleTableProxy.m */; };
 		60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FD22A1A15A100091000 /* YPModuleTableViewController.m */; };
 		60257FD92A1A15A100091000 /* YPModuleTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FD32A1A15A100091000 /* YPModuleTableViewModel.m */; };
 		60257FDC2A1A25BD00091000 /* UIViewController+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FDB2A1A25BD00091000 /* UIViewController+Router.m */; };
+		60257FE72A1A400C00091000 /* YPSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FE22A1A400C00091000 /* YPSettingManager.m */; };
+		60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FE52A1A400C00091000 /* YPLaboratoryDevice.m */; };
 		6034B2562A1485D80024E610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2552A1485D80024E610 /* AppDelegate.m */; };
 		6034B25F2A1485D80024E610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034B25D2A1485D80024E610 /* Main.storyboard */; };
 		6034B2612A1485D90024E610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6034B2602A1485D90024E610 /* Assets.xcassets */; };
@@ -54,10 +41,6 @@
 		6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2D52A14A6E40024E610 /* NSObject+YPLaboratory.m */; };
 		6034B2EC2A14A7940024E610 /* YPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2EB2A14A7940024E610 /* YPBaseViewController.m */; };
 		6034B2EF2A14A82A0024E610 /* YPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2EE2A14A82A0024E610 /* YPNavigationViewController.m */; };
-		6034B2FC2A14A9660024E610 /* YPHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2F22A14A9660024E610 /* YPHomeTableViewCell.m */; };
-		6034B2FE2A14A9660024E610 /* YPHomeProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2F52A14A9660024E610 /* YPHomeProxy.m */; };
-		6034B2FF2A14A9660024E610 /* YPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2F92A14A9660024E610 /* YPHomeViewController.m */; };
-		6034B3002A14A9660024E610 /* YPHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2FA2A14A9660024E610 /* YPHomeViewModel.m */; };
 		6034B30C2A14A99A0024E610 /* YPWorldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B3022A14A99A0024E610 /* YPWorldTableViewCell.m */; };
 		6034B30D2A14A99A0024E610 /* YPWorldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B3042A14A99A0024E610 /* YPWorldModel.m */; };
 		6034B30E2A14A99A0024E610 /* YPWorldProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B3052A14A99A0024E610 /* YPWorldProxy.m */; };
@@ -76,36 +59,6 @@
 		04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPLaboratory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		147C523EF284DF972559701E /* Pods-YPLaboratory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.debug.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.debug.xcconfig"; sourceTree = "<group>"; };
 		24FAB785EC799017D07AD679 /* Pods-YPLaboratory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.release.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.release.xcconfig"; sourceTree = "<group>"; };
-		60247ABE2A177AC1004155AD /* YPAboutUsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAboutUsTableViewCell.m; sourceTree = "<group>"; };
-		60247ABF2A177AC1004155AD /* YPAboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAboutUsViewController.h; sourceTree = "<group>"; };
-		60247AC02A177AC1004155AD /* YPAboutUsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAboutUsModel.m; sourceTree = "<group>"; };
-		60247AC12A177AC1004155AD /* YPAboutUsProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAboutUsProxy.m; sourceTree = "<group>"; };
-		60247AC22A177AC1004155AD /* YPAboutUsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAboutUsViewModel.h; sourceTree = "<group>"; };
-		60247AC32A177AC1004155AD /* YPAboutUsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAboutUsTableViewCell.h; sourceTree = "<group>"; };
-		60247AC42A177AC1004155AD /* YPAboutUsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAboutUsModel.h; sourceTree = "<group>"; };
-		60247AC52A177AC1004155AD /* YPAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAboutUsViewController.m; sourceTree = "<group>"; };
-		60247AC62A177AC1004155AD /* YPAboutUsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAboutUsViewModel.m; sourceTree = "<group>"; };
-		60247AC72A177AC1004155AD /* YPAboutUsProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAboutUsProxy.h; sourceTree = "<group>"; };
-		60247ADD2A178030004155AD /* YPUIComponentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUIComponentTableViewCell.m; sourceTree = "<group>"; };
-		60247ADE2A178030004155AD /* YPUIComponentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUIComponentViewController.h; sourceTree = "<group>"; };
-		60247ADF2A178030004155AD /* YPUIComponentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUIComponentModel.m; sourceTree = "<group>"; };
-		60247AE02A178030004155AD /* YPUIComponentProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUIComponentProxy.m; sourceTree = "<group>"; };
-		60247AE12A178030004155AD /* YPUIComponentViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUIComponentViewModel.h; sourceTree = "<group>"; };
-		60247AE22A178030004155AD /* YPUIComponentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUIComponentTableViewCell.h; sourceTree = "<group>"; };
-		60247AE32A178030004155AD /* YPUIComponentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUIComponentModel.h; sourceTree = "<group>"; };
-		60247AE42A178030004155AD /* YPUIComponentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUIComponentViewController.m; sourceTree = "<group>"; };
-		60247AE52A178030004155AD /* YPUIComponentViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUIComponentViewModel.m; sourceTree = "<group>"; };
-		60247AE62A178030004155AD /* YPUIComponentProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUIComponentProxy.h; sourceTree = "<group>"; };
-		60247AED2A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppleInternalPurchaseTableViewCell.m; sourceTree = "<group>"; };
-		60247AEE2A1780A8004155AD /* YPAppleInternalPurchaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppleInternalPurchaseViewController.h; sourceTree = "<group>"; };
-		60247AEF2A1780A8004155AD /* YPAppleInternalPurchaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppleInternalPurchaseModel.m; sourceTree = "<group>"; };
-		60247AF02A1780A8004155AD /* YPAppleInternalPurchaseProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppleInternalPurchaseProxy.m; sourceTree = "<group>"; };
-		60247AF12A1780A8004155AD /* YPAppleInternalPurchaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppleInternalPurchaseViewModel.h; sourceTree = "<group>"; };
-		60247AF22A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppleInternalPurchaseTableViewCell.h; sourceTree = "<group>"; };
-		60247AF32A1780A8004155AD /* YPAppleInternalPurchaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppleInternalPurchaseModel.h; sourceTree = "<group>"; };
-		60247AF42A1780A8004155AD /* YPAppleInternalPurchaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppleInternalPurchaseViewController.m; sourceTree = "<group>"; };
-		60247AF52A1780A8004155AD /* YPAppleInternalPurchaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppleInternalPurchaseViewModel.m; sourceTree = "<group>"; };
-		60247AF62A1780A8004155AD /* YPAppleInternalPurchaseProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppleInternalPurchaseProxy.h; sourceTree = "<group>"; };
 		60257FCB2A1A15A100091000 /* YPModuleTableTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPModuleTableTableViewCell.m; sourceTree = "<group>"; };
 		60257FCC2A1A15A100091000 /* YPModuleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPModuleTableViewController.h; sourceTree = "<group>"; };
 		60257FCE2A1A15A100091000 /* YPModuleTableProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPModuleTableProxy.m; sourceTree = "<group>"; };
@@ -116,6 +69,10 @@
 		60257FD42A1A15A100091000 /* YPModuleTableProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPModuleTableProxy.h; sourceTree = "<group>"; };
 		60257FDA2A1A25BD00091000 /* UIViewController+Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Router.h"; sourceTree = "<group>"; };
 		60257FDB2A1A25BD00091000 /* UIViewController+Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Router.m"; sourceTree = "<group>"; };
+		60257FE12A1A400C00091000 /* YPSettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPSettingManager.h; sourceTree = "<group>"; };
+		60257FE22A1A400C00091000 /* YPSettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPSettingManager.m; sourceTree = "<group>"; };
+		60257FE42A1A400C00091000 /* YPLaboratoryDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPLaboratoryDevice.h; sourceTree = "<group>"; };
+		60257FE52A1A400C00091000 /* YPLaboratoryDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPLaboratoryDevice.m; sourceTree = "<group>"; };
 		6034B2512A1485D80024E610 /* YPLaboratory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YPLaboratory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034B2542A1485D80024E610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6034B2552A1485D80024E610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,14 +128,6 @@
 		6034B2ED2A14A82A0024E610 /* YPNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPNavigationViewController.h; sourceTree = "<group>"; };
 		6034B2EE2A14A82A0024E610 /* YPNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPNavigationViewController.m; sourceTree = "<group>"; };
 		6034B2F02A14A8620024E610 /* YPLaboratoryTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPLaboratoryTools.h; sourceTree = "<group>"; };
-		6034B2F22A14A9660024E610 /* YPHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPHomeTableViewCell.m; sourceTree = "<group>"; };
-		6034B2F32A14A9660024E610 /* YPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPHomeViewController.h; sourceTree = "<group>"; };
-		6034B2F52A14A9660024E610 /* YPHomeProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPHomeProxy.m; sourceTree = "<group>"; };
-		6034B2F62A14A9660024E610 /* YPHomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPHomeViewModel.h; sourceTree = "<group>"; };
-		6034B2F72A14A9660024E610 /* YPHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPHomeTableViewCell.h; sourceTree = "<group>"; };
-		6034B2F92A14A9660024E610 /* YPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPHomeViewController.m; sourceTree = "<group>"; };
-		6034B2FA2A14A9660024E610 /* YPHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPHomeViewModel.m; sourceTree = "<group>"; };
-		6034B2FB2A14A9660024E610 /* YPHomeProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPHomeProxy.h; sourceTree = "<group>"; };
 		6034B3022A14A99A0024E610 /* YPWorldTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPWorldTableViewCell.m; sourceTree = "<group>"; };
 		6034B3032A14A99A0024E610 /* YPWorldViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPWorldViewController.h; sourceTree = "<group>"; };
 		6034B3042A14A99A0024E610 /* YPWorldModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPWorldModel.m; sourceTree = "<group>"; };
@@ -226,57 +175,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		60247ABD2A177A99004155AD /* AboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				60247AC42A177AC1004155AD /* YPAboutUsModel.h */,
-				60247AC02A177AC1004155AD /* YPAboutUsModel.m */,
-				60247AC72A177AC1004155AD /* YPAboutUsProxy.h */,
-				60247AC12A177AC1004155AD /* YPAboutUsProxy.m */,
-				60247AC32A177AC1004155AD /* YPAboutUsTableViewCell.h */,
-				60247ABE2A177AC1004155AD /* YPAboutUsTableViewCell.m */,
-				60247ABF2A177AC1004155AD /* YPAboutUsViewController.h */,
-				60247AC52A177AC1004155AD /* YPAboutUsViewController.m */,
-				60247AC22A177AC1004155AD /* YPAboutUsViewModel.h */,
-				60247AC62A177AC1004155AD /* YPAboutUsViewModel.m */,
-			);
-			path = AboutUs;
-			sourceTree = "<group>";
-		};
-		60247ACD2A177F91004155AD /* UIComponent */ = {
-			isa = PBXGroup;
-			children = (
-				60247AE32A178030004155AD /* YPUIComponentModel.h */,
-				60247ADF2A178030004155AD /* YPUIComponentModel.m */,
-				60247AE62A178030004155AD /* YPUIComponentProxy.h */,
-				60247AE02A178030004155AD /* YPUIComponentProxy.m */,
-				60247AE22A178030004155AD /* YPUIComponentTableViewCell.h */,
-				60247ADD2A178030004155AD /* YPUIComponentTableViewCell.m */,
-				60247ADE2A178030004155AD /* YPUIComponentViewController.h */,
-				60247AE42A178030004155AD /* YPUIComponentViewController.m */,
-				60247AE12A178030004155AD /* YPUIComponentViewModel.h */,
-				60247AE52A178030004155AD /* YPUIComponentViewModel.m */,
-			);
-			path = UIComponent;
-			sourceTree = "<group>";
-		};
-		60247AEC2A178086004155AD /* AppleInternalPurchase */ = {
-			isa = PBXGroup;
-			children = (
-				60247AF32A1780A8004155AD /* YPAppleInternalPurchaseModel.h */,
-				60247AEF2A1780A8004155AD /* YPAppleInternalPurchaseModel.m */,
-				60247AF62A1780A8004155AD /* YPAppleInternalPurchaseProxy.h */,
-				60247AF02A1780A8004155AD /* YPAppleInternalPurchaseProxy.m */,
-				60247AF22A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.h */,
-				60247AED2A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.m */,
-				60247AEE2A1780A8004155AD /* YPAppleInternalPurchaseViewController.h */,
-				60247AF42A1780A8004155AD /* YPAppleInternalPurchaseViewController.m */,
-				60247AF12A1780A8004155AD /* YPAppleInternalPurchaseViewModel.h */,
-				60247AF52A1780A8004155AD /* YPAppleInternalPurchaseViewModel.m */,
-			);
-			path = AppleInternalPurchase;
-			sourceTree = "<group>";
-		};
 		60257FCA2A1A14F000091000 /* Mould */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +188,25 @@
 				60257FD22A1A15A100091000 /* YPModuleTableViewController.m */,
 			);
 			path = Mould;
+			sourceTree = "<group>";
+		};
+		60257FDD2A1A400C00091000 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				60257FE32A1A400C00091000 /* Device */,
+				60257FE12A1A400C00091000 /* YPSettingManager.h */,
+				60257FE22A1A400C00091000 /* YPSettingManager.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		60257FE32A1A400C00091000 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				60257FE42A1A400C00091000 /* YPLaboratoryDevice.h */,
+				60257FE52A1A400C00091000 /* YPLaboratoryDevice.m */,
+			);
+			path = Device;
 			sourceTree = "<group>";
 		};
 		6034B2482A1485D80024E610 = {
@@ -361,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				6034B2F02A14A8620024E610 /* YPLaboratoryTools.h */,
+				60257FDD2A1A400C00091000 /* Setting */,
 				60C44E7E2A186C970073EA3F /* PageRouter */,
 				6034B2E92A14A77C0024E610 /* Base */,
 			);
@@ -431,17 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				60257FCA2A1A14F000091000 /* Mould */,
-				60247AEC2A178086004155AD /* AppleInternalPurchase */,
-				60247ACD2A177F91004155AD /* UIComponent */,
-				60247ABD2A177A99004155AD /* AboutUs */,
-				6034B2FB2A14A9660024E610 /* YPHomeProxy.h */,
-				6034B2F52A14A9660024E610 /* YPHomeProxy.m */,
-				6034B2F72A14A9660024E610 /* YPHomeTableViewCell.h */,
-				6034B2F22A14A9660024E610 /* YPHomeTableViewCell.m */,
-				6034B2F62A14A9660024E610 /* YPHomeViewModel.h */,
-				6034B2FA2A14A9660024E610 /* YPHomeViewModel.m */,
-				6034B2F32A14A9660024E610 /* YPHomeViewController.h */,
-				6034B2F92A14A9660024E610 /* YPHomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -626,27 +533,15 @@
 				6034B2DC2A14A6E40024E610 /* UIImage+YPLaboratory.m in Sources */,
 				60257FDC2A1A25BD00091000 /* UIViewController+Router.m in Sources */,
 				6034B2E02A14A6E40024E610 /* UIColor+YPLaboratory.m in Sources */,
-				6034B2FC2A14A9660024E610 /* YPHomeTableViewCell.m in Sources */,
 				6034B2EF2A14A82A0024E610 /* YPNavigationViewController.m in Sources */,
-				60247AEA2A178030004155AD /* YPUIComponentViewController.m in Sources */,
-				6034B2FF2A14A9660024E610 /* YPHomeViewController.m in Sources */,
-				60247AC82A177AC1004155AD /* YPAboutUsTableViewCell.m in Sources */,
-				60247AFA2A1780A8004155AD /* YPAppleInternalPurchaseViewController.m in Sources */,
-				60247AEB2A178030004155AD /* YPUIComponentViewModel.m in Sources */,
-				6034B3002A14A9660024E610 /* YPHomeViewModel.m in Sources */,
-				60247AF92A1780A8004155AD /* YPAppleInternalPurchaseProxy.m in Sources */,
-				60247AC92A177AC1004155AD /* YPAboutUsModel.m in Sources */,
 				6034B2D92A14A6E40024E610 /* UIView+YPLaboratory.m in Sources */,
-				60247AE82A178030004155AD /* YPUIComponentModel.m in Sources */,
-				60247ACB2A177AC1004155AD /* YPAboutUsViewController.m in Sources */,
-				60247ACC2A177AC1004155AD /* YPAboutUsViewModel.m in Sources */,
 				6034B30C2A14A99A0024E610 /* YPWorldTableViewCell.m in Sources */,
 				6034B2862A14A64E0024E610 /* YPRootViewController.m in Sources */,
+				60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */,
 				60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */,
 				60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */,
 				60257FD52A1A15A100091000 /* YPModuleTableTableViewCell.m in Sources */,
 				6034B2DA2A14A6E40024E610 /* UIScrollView+YPLaboratory.m in Sources */,
-				60247AE72A178030004155AD /* YPUIComponentTableViewCell.m in Sources */,
 				6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */,
 				6034B2E72A14A6E40024E610 /* UIImageView+YPLaboratory.m in Sources */,
 				60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */,
@@ -662,18 +557,13 @@
 				6034B2562A1485D80024E610 /* AppDelegate.m in Sources */,
 				6034B2E22A14A6E40024E610 /* NSDate+YPLaboratory.m in Sources */,
 				6034B2DD2A14A6E40024E610 /* NSString+YPLaboratory.m in Sources */,
-				6034B2FE2A14A9660024E610 /* YPHomeProxy.m in Sources */,
+				60257FE72A1A400C00091000 /* YPSettingManager.m in Sources */,
 				6034B31E2A14A9D90024E610 /* YPUserProxy.m in Sources */,
-				60247AF72A1780A8004155AD /* YPAppleInternalPurchaseTableViewCell.m in Sources */,
 				6034B31C2A14A9D90024E610 /* YPUserTableViewCell.m in Sources */,
 				6034B31F2A14A9D90024E610 /* YPUserViewController.m in Sources */,
-				60247AF82A1780A8004155AD /* YPAppleInternalPurchaseModel.m in Sources */,
-				60247AE92A178030004155AD /* YPUIComponentProxy.m in Sources */,
 				6034B2E52A14A6E40024E610 /* UITableViewCell+YPLaboratory.m in Sources */,
 				6034B2DB2A14A6E40024E610 /* UIViewController+YPLaboratory.m in Sources */,
-				60247ACA2A177AC1004155AD /* YPAboutUsProxy.m in Sources */,
 				6034B3102A14A99A0024E610 /* YPWorldViewModel.m in Sources */,
-				60247AFB2A1780A8004155AD /* YPAppleInternalPurchaseViewModel.m in Sources */,
 				6034B2672A1485D90024E610 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

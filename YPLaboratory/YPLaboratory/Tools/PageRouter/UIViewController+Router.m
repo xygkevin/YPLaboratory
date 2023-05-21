@@ -41,14 +41,17 @@
             break;
         case YPPageRouterTypeAppCheckUpdate: {
             // app检查更新
+            [[YPSettingManager sharedInstance] showAppstore];
         }
             break;
         case YPPageRouterTypeAppComment: {
             // app评论
+            [[YPSettingManager sharedInstance] showComment];
         }
             break;
         case YPPageRouterTypeAppInternalPurchase: {
             // 应用内购 extend=productId
+            
         }
             break;
         case YPPageRouterTypeTableCell: {
