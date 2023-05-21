@@ -10,5 +10,6 @@
 
 #import "YPBaseViewController.h"
 #import "YPNavigationViewController.h"
+#import "YPRouterManager.h"
 
 #endif /* YPLaboratoryToolsHeader_h */

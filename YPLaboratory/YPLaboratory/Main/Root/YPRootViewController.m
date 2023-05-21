@@ -6,13 +6,13 @@
 //
 
 #import "YPRootViewController.h"
-#import "YPHomeViewController.h"
+#import "YPModuleTableViewController.h"
 #import "YPWorldViewController.h"
 #import "YPUserViewController.h"
 
 @interface YPRootViewController ()
 
-@property (nonatomic, strong) YPHomeViewController *homeViewController;
+@property (nonatomic, strong) YPModuleTableViewController *homeViewController;
 @property (nonatomic, strong) YPWorldViewController *worldViewController;
 @property (nonatomic, strong) YPUserViewController *userViewController;
 
@@ -32,6 +32,7 @@
         [self createNavigation:self.worldViewController title:@"ls_world_tabbar".yp_localizedString image:[UIImage imageNamed:@"yp_icon_world"]],
         [self createNavigation:self.userViewController title:@"ls_user_tabbar".yp_localizedString image:[UIImage imageNamed:@"yp_icon_user"]],
     ];
+    self.tabBar.tintColor = [UIColor yp_themeColor];
 }
 
 - (YPNavigationViewController *)createNavigation:(UIViewController *)vc title:(NSString *)title image:(UIImage *)image {
@@ -56,9 +57,10 @@
 
 #pragma mark - getters | setters
 
-- (YPHomeViewController *)homeViewController {
+- (YPModuleTableViewController *)homeViewController {
     if (!_homeViewController) {
-        _homeViewController = [[YPHomeViewController alloc] init];
+        _homeViewController = [[YPModuleTableViewController alloc] init];
+        _homeViewController.model = [YPRouterManager shareInstance].homeRouter;
     }
     return _homeViewController;
 }

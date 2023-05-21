@@ -1,30 +1,30 @@
 //
-//  YPHomeViewController.m
+//  YPModuleTableViewController.m
 //  YPLaboratory
 //
-//  Created by Hansen on 2023/5/17.
+//  Created by Hansen on 2023/5/21.
 //
 
-#import "YPHomeViewController.h"
-#import "YPHomeViewModel.h"
-#import "YPHomeProxy.h"
-#import "YPHomeTableViewCell.h"
+#import "YPModuleTableViewController.h"
+#import "YPModuleTableViewModel.h"
+#import "YPModuleTableProxy.h"
+#import "YPModuleTableTableViewCell.h"
 #import "Masonry.h"
 
-@interface YPHomeViewController () <YPHomeViewModelDelegate>
+@interface YPModuleTableViewController () <YPModuleTableViewModelDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) YPHomeViewModel *viewModel;
-@property (nonatomic, strong) YPHomeProxy *proxy;
+@property (nonatomic, strong) YPModuleTableViewModel *viewModel;
+@property (nonatomic, strong) YPModuleTableProxy *proxy;
 
 @end
 
-@implementation YPHomeViewController
+@implementation YPModuleTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     [self setupSubviews];
     [self startLoadData];
 }
@@ -41,7 +41,7 @@
     }];
 }
 
-#pragma mark - YPHomeViewModelDelegate
+#pragma mark - YPModuleTableViewModelDelegate
 
 - (void)didEndLoadData:(BOOL)hasMore {
     [self.tableView.mj_header endRefreshing];
@@ -64,43 +64,46 @@
         tableView.showsVerticalScrollIndicator = NO;
         tableView.delegate = self.proxy;
         tableView.dataSource = self.proxy;
-        
         __weak typeof(self) weakSelf = self;
         tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
             [weakSelf.viewModel loadMoreData];
         }];
-        
         NSArray *classs = @[
             [UITableViewCell class],
-            [YPHomeTableViewCell class],
+            [YPModuleTableTableViewCell class],
         ];
         [classs enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [tableView registerClass:obj forCellReuseIdentifier:NSStringFromClass(obj)];
         }];
-        
-        NSArray *headersClasss = @[];
+        NSArray *headersClasss = @[
+        ];
         [headersClasss enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [tableView registerClass:obj forHeaderFooterViewReuseIdentifier:NSStringFromClass(obj)];
         }];
-        
         _tableView = tableView;
     }
     return _tableView;
 }
 
-- (YPHomeProxy *)proxy {
+- (YPModuleTableProxy *)proxy {
     if (!_proxy) {
-        _proxy = [[YPHomeProxy alloc] initWithViewModel:self.viewModel];
+        _proxy = [[YPModuleTableProxy alloc] initWithViewModel:self.viewModel];
     }
     return _proxy;
 }
 
-- (YPHomeViewModel *)viewModel {
+- (YPModuleTableViewModel *)viewModel {
     if (!_viewModel) {
-        _viewModel = [[YPHomeViewModel alloc] init];
+        _viewModel = [[YPModuleTableViewModel alloc] init];
         _viewModel.delegate = self;
     }
     return _viewModel;
+}
+
+- (void)setModel:(YPPageRouter *)model {
+    _model = model;
+    self.viewModel.model = model;
+    self.title = model.title?:@"";
 }
 
 @end

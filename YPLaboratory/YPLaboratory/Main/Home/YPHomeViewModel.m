@@ -60,7 +60,7 @@
     }
     {
         YPFormElement *element = [[YPFormElement alloc] init];
-        element.title = @"ls_network_image_download".yp_localizedString;
+        element.title = @"ls_network".yp_localizedString;
         element.extend = @"YPBaseViewController";
         [self.dataList addObject:element];
     }

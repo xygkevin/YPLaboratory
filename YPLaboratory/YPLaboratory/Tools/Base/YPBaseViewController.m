@@ -37,6 +37,10 @@
     } else {
         // Fallback on earlier versions
     }
+    // 如果是根试图隐藏侧边按钮
+    if (self.navigationController.viewControllers.count == 1) {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 - (void)__setNavBarButtonItem {
