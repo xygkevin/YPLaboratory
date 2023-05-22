@@ -24,7 +24,7 @@
 - (void)initTrackSDK {
     NSString *channelId = @"iOS";
     NSString *version = [YPSettingManager sharedInstance].device.version?:@"";
-    NSString *appid = @"h6fkokkv2ymn3r2p";
+    NSString *appid = @"t2qk277be6vwwjkx";
     NSDictionary *eventProperties = [self eventProperties];
     [TapDB registerStaticProperties:eventProperties];
     [TapDB onStart:appid channel:channelId version:version properties:@{}];
@@ -52,44 +52,9 @@
             name = @"prompt_copy";
         }
             break;
-        case YPTrackingEventTypeDelete: {
-            /// 点击删除
-            name = @"prompt_delete";
-        }
-            break;
-        case YPTrackingEventTypeEdit: {
-            /// 点击编辑
-            name = @"prompt_edit";
-        }
-            break;
-        case YPTrackingEventTypeAdd: {
-            /// 点击新增
-            name = @"prompt_add";
-        }
-            break;
-        case YPTrackingEventTypeCollection: {
-            /// 点击收藏
-            name = @"prompt_collection";
-        }
-            break;
-        case YPTrackingEventTypeSearch: {
-            /// 搜索内容
-            name = @"prompt_search";
-        }
-            break;
-        case YPTrackingEventTypeSave: {
-            /// 保存内容
-            name = @"prompt_save";
-        }
-            break;
         case YPTrackingEventTypeSafari: {
             /// 跳转Safari
             name = @"prompt_safari";
-        }
-            break;
-        case YPTrackingEventTypeComment: {
-            /// 点击评论
-            name = @"prompt_comment";
         }
             break;
         case YPTrackingEventTypePayment: {
@@ -112,12 +77,6 @@
             name = @"prompt_checkupdate";
         }
             break;
-        case YPTrackingEventTypePromptsCheckUpdate: {
-            /// proments 检查更新
-            name = @"prompt_promptscheckupdate";
-        }
-            break;
-            
         default: {
             name = @"prompt_unknown";
         }

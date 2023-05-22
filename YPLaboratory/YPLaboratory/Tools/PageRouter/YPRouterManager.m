@@ -125,10 +125,10 @@
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"不请我喝冰可乐".yp_localizedString;
+        element.title = @"请我喝一口冰可乐".yp_localizedString;
         element.type = YPPageRouterTypeAppInternalPurchase;
-        element.content = @"0 CNY";
-        element.extend = @"free_goods";
+        element.content = @"1 CNY";
+        element.extend = @"1_goods";
         [dataList addObject:element];
     }
     {

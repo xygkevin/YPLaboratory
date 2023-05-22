@@ -40,7 +40,7 @@
 #pragma mark - Bugly
 
 - (void)buglyInitConfigure {
-    NSString *kBuglyAppId = @"214e0f65cb";
+    NSString *kBuglyAppId = @"e336771932";
     BuglyConfig *config = [[BuglyConfig alloc] init];
     config.unexpectedTerminatingDetectionEnable = NO; //非正常退出事件记录开关，默认关闭
     config.reportLogLevel = BuglyLogLevelWarn; //报告级别
@@ -77,7 +77,7 @@
 - (void)jpushInitDidFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self registerUserNotification];
     //极光推送
-    NSString *kJPushAppKey = @"dc785ae7b68240122ff0db9c";
+    NSString *kJPushAppKey = @"6d07b5c0eec2ef820228c45f";
     NSString *kChannel = @"1000";
     NSInteger apsForProduction = 1;
 # ifdef DEBUG

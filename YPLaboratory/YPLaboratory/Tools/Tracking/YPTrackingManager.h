@@ -12,18 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum : NSUInteger {
     YPTrackingEventTypeUnknown = 0,
     YPTrackingEventTypeCopy,/// 点击复制
-    YPTrackingEventTypeDelete,/// 点击删除
-    YPTrackingEventTypeEdit,/// 点击编辑
-    YPTrackingEventTypeAdd,/// 点击新增
-    YPTrackingEventTypeCollection,/// 点击收藏
-    YPTrackingEventTypeSearch,/// 搜索内容
-    YPTrackingEventTypeSave,/// 保存内容
     YPTrackingEventTypeSafari,/// 跳转Safari
-    YPTrackingEventTypeComment,/// 点击评论
     YPTrackingEventTypePayment,/// 点击支付
     YPTrackingEventTypePaymentComplete,/// 支付完成
     YPTrackingEventTypeCheckUpdate,/// app 检查更新
-    YPTrackingEventTypePromptsCheckUpdate,/// proments 检查更新
 } YPTrackingEventType;
 
 @interface YPTrackingManager : NSObject
