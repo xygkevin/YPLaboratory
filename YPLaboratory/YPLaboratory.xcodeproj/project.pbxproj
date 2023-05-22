@@ -63,6 +63,7 @@
 		6034B3202A14A9D90024E610 /* YPUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B31A2A14A9D90024E610 /* YPUserViewModel.m */; };
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
+		60FF4C992A1B17A600A2D04B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF4C982A1B17A600A2D04B /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,8 @@
 		60C44E802A186D6F0073EA3F /* YPRouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPRouterManager.m; sourceTree = "<group>"; };
 		60C44E822A186E2C0073EA3F /* YPPageRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouter.h; sourceTree = "<group>"; };
 		60C44E832A186E2C0073EA3F /* YPPageRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPPageRouter.m; sourceTree = "<group>"; };
+		60FF4C982A1B17A600A2D04B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		60FF4C9A2A1B17AD00A2D04B /* YPLaboratory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YPLaboratory.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,7 @@
 				6025800A2A1A604F00091000 /* TapDB.framework in Frameworks */,
 				17B65EBA9D4EF60CD769BD61 /* Pods_YPLaboratory.framework in Frameworks */,
 				6025800B2A1A604F00091000 /* TapCommonSDK.framework in Frameworks */,
+				60FF4C992A1B17A600A2D04B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 		6034B2532A1485D80024E610 /* YPLaboratory */ = {
 			isa = PBXGroup;
 			children = (
+				60FF4C9A2A1B17AD00A2D04B /* YPLaboratory.entitlements */,
 				6034B2542A1485D80024E610 /* AppDelegate.h */,
 				6034B2552A1485D80024E610 /* AppDelegate.m */,
 				60257FFB2A1A5F2400091000 /* AppDelegate+YPThird.h */,
@@ -483,6 +488,7 @@
 		DB4B6438A8C32231897D241C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60FF4C982A1B17A600A2D04B /* StoreKit.framework */,
 				04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */,
 			);
 			name = Frameworks;
@@ -816,6 +822,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YPLaboratory/YPLaboratory.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
@@ -850,6 +857,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YPLaboratory/YPLaboratory.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TB5KM6Y5DQ;
