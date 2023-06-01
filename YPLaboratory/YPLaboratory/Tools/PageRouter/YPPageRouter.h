@@ -30,6 +30,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSString *placeholder;
 @property (nonatomic, strong) id extend;
 @property (nonatomic, assign) YPPageRouterType type;
+@property (nonatomic, assign) BOOL useInsetGrouped;// 是否使用 InsetGrouped default NO
 
 @end
 

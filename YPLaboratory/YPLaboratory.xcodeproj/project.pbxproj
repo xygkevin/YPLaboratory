@@ -64,6 +64,9 @@
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
 		60FF4C992A1B17A600A2D04B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF4C982A1B17A600A2D04B /* StoreKit.framework */; };
+		60FF4CBA2A1F4C0100A2D04B /* YPPageRouterModule+Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4CB92A1F4C0100A2D04B /* YPPageRouterModule+Component.m */; };
+		60FF4CBF2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4CBE2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m */; };
+		60FF4CC22A1F547B00A2D04B /* YPPageRouterModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4CC12A1F547B00A2D04B /* YPPageRouterModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +186,13 @@
 		60C44E832A186E2C0073EA3F /* YPPageRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPPageRouter.m; sourceTree = "<group>"; };
 		60FF4C982A1B17A600A2D04B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		60FF4C9A2A1B17AD00A2D04B /* YPLaboratory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YPLaboratory.entitlements; sourceTree = "<group>"; };
+		60FF4CB82A1F4C0100A2D04B /* YPPageRouterModule+Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+Component.h"; sourceTree = "<group>"; };
+		60FF4CB92A1F4C0100A2D04B /* YPPageRouterModule+Component.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+Component.m"; sourceTree = "<group>"; };
+		60FF4CBC2A1F4C5700A2D04B /* YPPageRouterModuleCategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouterModuleCategoryHeader.h; sourceTree = "<group>"; };
+		60FF4CBD2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+AppleInternalPurchase.h"; sourceTree = "<group>"; };
+		60FF4CBE2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+AppleInternalPurchase.m"; sourceTree = "<group>"; };
+		60FF4CC02A1F547B00A2D04B /* YPPageRouterModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouterModule.h; sourceTree = "<group>"; };
+		60FF4CC12A1F547B00A2D04B /* YPPageRouterModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPPageRouterModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,12 +487,27 @@
 			children = (
 				60257FDA2A1A25BD00091000 /* UIViewController+Router.h */,
 				60257FDB2A1A25BD00091000 /* UIViewController+Router.m */,
+				60FF4CBB2A1F4C0700A2D04B /* RouterSection */,
 				60C44E822A186E2C0073EA3F /* YPPageRouter.h */,
 				60C44E832A186E2C0073EA3F /* YPPageRouter.m */,
 				60C44E7F2A186D6F0073EA3F /* YPRouterManager.h */,
 				60C44E802A186D6F0073EA3F /* YPRouterManager.m */,
 			);
 			path = PageRouter;
+			sourceTree = "<group>";
+		};
+		60FF4CBB2A1F4C0700A2D04B /* RouterSection */ = {
+			isa = PBXGroup;
+			children = (
+				60FF4CC02A1F547B00A2D04B /* YPPageRouterModule.h */,
+				60FF4CC12A1F547B00A2D04B /* YPPageRouterModule.m */,
+				60FF4CBC2A1F4C5700A2D04B /* YPPageRouterModuleCategoryHeader.h */,
+				60FF4CB82A1F4C0100A2D04B /* YPPageRouterModule+Component.h */,
+				60FF4CB92A1F4C0100A2D04B /* YPPageRouterModule+Component.m */,
+				60FF4CBD2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.h */,
+				60FF4CBE2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m */,
+			);
+			path = RouterSection;
 			sourceTree = "<group>";
 		};
 		DB4B6438A8C32231897D241C /* Frameworks */ = {
@@ -625,16 +650,19 @@
 				60257FF02A1A452100091000 /* YPNetworking.m in Sources */,
 				6034B30C2A14A99A0024E610 /* YPWorldTableViewCell.m in Sources */,
 				6034B2862A14A64E0024E610 /* YPRootViewController.m in Sources */,
+				60FF4CBA2A1F4C0100A2D04B /* YPPageRouterModule+Component.m in Sources */,
 				60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */,
 				60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */,
 				60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */,
 				60257FD52A1A15A100091000 /* YPModuleTableTableViewCell.m in Sources */,
 				60257FF12A1A452100091000 /* YPHTTPResponse.m in Sources */,
 				6034B2DA2A14A6E40024E610 /* UIScrollView+YPLaboratory.m in Sources */,
+				60FF4CC22A1F547B00A2D04B /* YPPageRouterModule.m in Sources */,
 				602580042A1A5FC400091000 /* YPNoticeHeader.m in Sources */,
 				6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */,
 				6034B2E72A14A6E40024E610 /* UIImageView+YPLaboratory.m in Sources */,
 				60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */,
+				60FF4CBF2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m in Sources */,
 				6034B30E2A14A99A0024E610 /* YPWorldProxy.m in Sources */,
 				6034B30D2A14A99A0024E610 /* YPWorldModel.m in Sources */,
 				6034B2E42A14A6E40024E610 /* UITextView+YPLaboratory.m in Sources */,

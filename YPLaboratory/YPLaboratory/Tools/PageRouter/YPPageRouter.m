@@ -9,4 +9,12 @@
 
 @implementation YPPageRouter
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.enable = YES;
+        self.useInsetGrouped = NO;
+    }
+    return self;
+}
+
 @end

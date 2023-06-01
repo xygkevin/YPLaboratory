@@ -6,20 +6,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YPPageRouterModule.h"
 #import "YPPageRouter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YPRouterManager : NSObject
 
-@property (nonatomic, readonly) YPPageRouter *homeRouter;
+@property (nonatomic, readonly) YPPageRouterModule *homeRouter;
 
 + (instancetype)shareInstance;
 
 /// 通过 Model 获取列表
 /// - Parameter model: model
-- (NSArray <YPPageRouter *>*)getRoutersByModel:(YPPageRouter *)model;
-
+- (NSArray <YPPageRouterModule *>*)getRoutersByModel:(YPPageRouter *)model;
 
 @end
 

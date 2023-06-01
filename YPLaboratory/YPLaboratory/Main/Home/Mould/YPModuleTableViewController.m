@@ -58,7 +58,19 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        UITableView *tableView;
+        BOOL useInsetGrouped = self.model.useInsetGrouped;
+        if (@available(iOS 13.0, *)) {
+            if (useInsetGrouped) {
+                tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleInsetGrouped];
+            } else {
+                tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+            }
+        } else {
+            // Fallback on earlier versions
+            tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        }
+        
         tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         tableView.showsHorizontalScrollIndicator = NO;
         tableView.showsVerticalScrollIndicator = NO;
