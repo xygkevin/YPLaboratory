@@ -143,4 +143,198 @@
     return @[section];
 }
 
+// 丰富多彩的cell
++ (NSArray *)ComponentRouters_CollectionCells {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"丰富多彩的 cell（UITableView）".yp_localizedString;
+        element.type = YPPageRouterTypeTableCell;
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
+// 多样的选择框
++ (NSArray *)ComponentRouters_PickerView {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"时分".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"HH:mm";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"年月日".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"yyyy-MM-dd";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"年月日分".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"yyyy-MM-dd HH:mm";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"倒计时".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"HH:mm";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"字体选择".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Font";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"颜色选择".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Color";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"性别选择".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Gender";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"地址选择（省市区）".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Address";
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
+// 导航栏控制
++ (NSArray *)ComponentRouters_NavigationBar {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    UINavigationBar *navigationBar = [UIViewController yp_topViewController].navigationController.navigationBar;
+    
+    BOOL enableScrollEdgeAppearance = NO;
+    if (@available(iOS 13.0, *)) {
+        enableScrollEdgeAppearance = navigationBar.scrollEdgeAppearance ? NO : YES;
+    } else {
+        enableScrollEdgeAppearance = NO;
+    }
+    
+    BOOL translucent = navigationBar.translucent;
+    UIColor *tintColor = navigationBar.tintColor;
+    UIColor *barTintColor = navigationBar.barTintColor;
+    if (@available(iOS 13.0, *)) {
+        barTintColor = navigationBar.standardAppearance.backgroundColor;
+    }
+    UIImage *shadowImage = navigationBar.shadowImage;
+    NSDictionary *titleTextAttributes = navigationBar.titleTextAttributes;
+    UIFont *titleFont = titleTextAttributes[NSFontAttributeName];
+    NSString *titleFontName = titleFont.fontName;
+    UIColor *titleColor = titleTextAttributes[NSForegroundColorAttributeName];
+    BOOL isBold = YES;
+    {
+        if (@available(iOS 13.0, *)) {
+            YPPageRouter *element = [[YPPageRouter alloc] init];
+            element.title = @"导航滚动边缘变化（iOS 13）".yp_localizedString;
+            element.type = YPPageRouterTypeSwitch;
+            element.content = @(enableScrollEdgeAppearance).stringValue;
+            element.didSelectedCallback = ^(YPPageRouter * _Nonnull router) {
+                BOOL enableScrollEdgeAppearance = router.content.boolValue;
+                if (enableScrollEdgeAppearance) {
+                    navigationBar.scrollEdgeAppearance = nil;
+                } else {
+                    navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance;
+                }
+            };
+            [dataList addObject:element];
+        }
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航是否半透明".yp_localizedString;
+        element.type = YPPageRouterTypeSwitch;
+        element.content = @(translucent).stringValue;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router) {
+            BOOL translucent = router.content.boolValue;
+            navigationBar.translucent = translucent;
+        };
+        [dataList addObject:element];
+    }
+//    {
+//        YPPageRouter *element = [[YPPageRouter alloc] init];
+//        element.title = @"导航是否全透明".yp_localizedString;
+//        element.type = YPPageRouterTypeSwitch;
+//        element.content = @"0";
+//        [dataList addObject:element];
+//    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航主题色调".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [UIColor yp_hexStringFromColor:tintColor];
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航背景颜色".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [UIColor yp_hexStringFromColor:barTintColor];
+        [dataList addObject:element];
+    }
+//    {
+//        YPPageRouter *element = [[YPPageRouter alloc] init];
+//        element.title = @"导航是否显示底部线条".yp_localizedString;
+//        element.type = YPPageRouterTypeSwitch;
+//        element.content = @"0";
+//        [dataList addObject:element];
+//    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航字体".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = titleFontName;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航字体颜色".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [UIColor yp_hexStringFromColor:titleColor];
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航字体大小".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @(titleFont.pointSize).stringValue;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航字体是否加粗".yp_localizedString;
+        element.type = YPPageRouterTypeSwitch;
+        element.content = @(isBold).stringValue;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"重置所有".yp_localizedString;
+        element.type = YPPageRouterTypeButton;
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
 @end

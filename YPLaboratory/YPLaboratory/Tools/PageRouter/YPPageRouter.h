@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
     YPPageRouterTypeNormal = 0,
+    YPPageRouterTypeButton, // 简单按钮的cell
+    YPPageRouterTypeSwitch, // 简单开关的cell
     YPPageRouterTypeCopy, // Copy model->content
     YPPageRouterTypeTable, // 是一个列表 table
     YPPageRouterTypeCollection, // 是一个列表 collection
@@ -31,6 +33,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) id extend;
 @property (nonatomic, assign) YPPageRouterType type;
 @property (nonatomic, assign) BOOL useInsetGrouped;// 是否使用 InsetGrouped default NO
+
+@property (nonatomic, copy) void (^didSelectedCallback)(YPPageRouter *router);// 事件cell回调，设置了就有回调
 
 @end
 

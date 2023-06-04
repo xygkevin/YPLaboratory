@@ -8,6 +8,7 @@
 #ifndef YPRouterCategoryHeader_h
 #define YPRouterCategoryHeader_h
 
+#import "YPPageRouterModule+Home.h"
 #import "YPPageRouterModule+Component.h"
 #import "YPPageRouterModule+AppleInternalPurchase.h"
 

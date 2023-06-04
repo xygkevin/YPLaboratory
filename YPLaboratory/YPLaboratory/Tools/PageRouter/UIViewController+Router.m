@@ -15,7 +15,13 @@
     YPPageRouter *cellModel = pageRouter;
     switch (cellModel.type) {
         case YPPageRouterTypeNormal:
-            
+        case YPPageRouterTypeButton:
+        case YPPageRouterTypeSwitch: {
+            // 响应事件
+            if (pageRouter.didSelectedCallback) {
+                pageRouter.didSelectedCallback(pageRouter);
+            }
+        }
             break;
         case YPPageRouterTypeCopy:
             // Copy model->content

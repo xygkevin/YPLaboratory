@@ -69,7 +69,7 @@
     }
     
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
-    section.headerTitle = @"如果你觉得对你有帮助，你想...";
+    section.headerTitle = @"如果你觉得对你有帮助，你想...".yp_localizedString;
     return @[section];
 }
 

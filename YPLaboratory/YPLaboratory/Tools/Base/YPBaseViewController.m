@@ -20,23 +20,28 @@
     self.view.backgroundColor = [UIColor yp_backgroundColor];
     
     [self __setNavBarButtonItem];
-    UIColor *barTintColor = [UIColor yp_backgroundColor];
-    // 设置导航栏的背景颜色
-    [self.navigationController.navigationBar setBarTintColor:barTintColor];
-    // 取消导航栏的半透明效果
-    [self.navigationController.navigationBar setTranslucent:NO];
-    //去除底部黑线
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    if (@available(iOS 13.0, *)) {
-        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-        [appearance configureWithOpaqueBackground];
-        appearance.backgroundColor = barTintColor;
-        [appearance setShadowImage:[[UIImage alloc] init]];
-        self.navigationController.navigationBar.standardAppearance = appearance;
-        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
-    } else {
-        // Fallback on earlier versions
-    }
+    
+//    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setShadowImage:[UIImage new]];
+//    self.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18.f]};
+    
+//    UIColor *barTintColor = [UIColor yp_backgroundColor];
+//    // 设置导航栏的背景颜色
+//    [self.navigationController.navigationBar setBarTintColor:barTintColor];
+//    // 取消导航栏的半透明效果
+//    [self.navigationController.navigationBar setTranslucent:NO];
+//    //去除底部黑线
+//    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+//    if (@available(iOS 13.0, *)) {
+//        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+//        [appearance configureWithOpaqueBackground];
+//        appearance.backgroundColor = barTintColor;
+//        [appearance setShadowImage:[[UIImage alloc] init]];
+//        self.navigationController.navigationBar.standardAppearance = appearance;
+//        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
+//    } else {
+//        // Fallback on earlier versions
+//    }
     // 如果是根试图隐藏侧边按钮
     if (self.navigationController.viewControllers.count == 1) {
         self.navigationItem.leftBarButtonItem = nil;

@@ -7,7 +7,7 @@
 
 #import "YPModuleTableProxy.h"
 #import "YPModuleTableViewModel.h"
-#import "YPModuleTableTableViewCell.h"
+#import "YPModuleNormalCell.h"
 #import "YPPageRouter.h"
 #import "UIViewController+Router.h"
 #import "UIViewController+Router.h"
@@ -30,9 +30,38 @@
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YPModuleTableTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YPModuleTableTableViewCell"];
     YPPageRouterModule *module = self.viewModel.dataList[indexPath.section];
     YPPageRouter *cellModel = module.routers[indexPath.row];
+    
+    NSString *identifier = @"YPModuleBaseCell";
+    switch (cellModel.type) {
+        case YPPageRouterTypeNormal:
+        case YPPageRouterTypeCopy:
+        case YPPageRouterTypeTable:
+        case YPPageRouterTypeCollection:
+        case YPPageRouterTypePush:
+        case YPPageRouterTypeAppCheckUpdate:
+        case YPPageRouterTypeAppComment:
+        case YPPageRouterTypeAppInternalPurchase:
+        case YPPageRouterTypeTableCell:
+        case YPPageRouterTypeCollectionCell: {
+            identifier = @"YPModuleNormalCell";
+        }
+            break;
+        case YPPageRouterTypeSwitch: {
+            identifier = @"YPModuleSwitchCell";
+        }
+            break;
+        case YPPageRouterTypeButton: {
+            identifier = @"YPModuleButtonCell";
+        }
+            break;
+        default: {
+            identifier = @"YPModuleBaseCell";
+        }
+            break;
+    }
+    YPModuleBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.cellModel = cellModel;
     return cell;
 }

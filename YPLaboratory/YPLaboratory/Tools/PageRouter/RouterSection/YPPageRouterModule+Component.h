@@ -17,6 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 // 丰富多彩的cell
 + (NSArray *)ComponentRouters_TableCells;
 
+// 丰富多彩的cell
++ (NSArray *)ComponentRouters_CollectionCells;
+
+// 多样的选择框
++ (NSArray *)ComponentRouters_PickerView;
+
+// 导航栏控制
++ (NSArray *)ComponentRouters_NavigationBar;
+
 @end
 
 NS_ASSUME_NONNULL_END

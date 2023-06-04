@@ -5,17 +5,17 @@
 //  Created by Hansen on 2023/5/21.
 //
 
-#import "YPModuleTableTableViewCell.h"
+#import "YPModuleNormalCell.h"
 #import "YPPageRouter.h"
 
-@interface YPModuleTableTableViewCell ()
+@interface YPModuleNormalCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *contentLabel;
 
 @end
 
-@implementation YPModuleTableTableViewCell
+@implementation YPModuleNormalCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -33,7 +33,7 @@
 }
 
 - (void)setCellModel:(YPPageRouter *)cellModel {
-    _cellModel = cellModel;
+    [super setCellModel:cellModel];
     self.titleLabel.text = cellModel.title?:@"";
     self.contentLabel.text = cellModel.content?:@"";
 }

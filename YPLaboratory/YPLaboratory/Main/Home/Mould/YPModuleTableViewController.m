@@ -8,8 +8,11 @@
 #import "YPModuleTableViewController.h"
 #import "YPModuleTableViewModel.h"
 #import "YPModuleTableProxy.h"
-#import "YPModuleTableTableViewCell.h"
 #import "Masonry.h"
+#import "YPModuleBaseCell.h"
+#import "YPModuleNormalCell.h"
+#import "YPModuleSwitchCell.h"
+#import "YPModuleButtonCell.h"
 
 @interface YPModuleTableViewController () <YPModuleTableViewModelDelegate>
 
@@ -82,7 +85,10 @@
         }];
         NSArray *classs = @[
             [UITableViewCell class],
-            [YPModuleTableTableViewCell class],
+            [YPModuleBaseCell class],
+            [YPModuleNormalCell class],
+            [YPModuleSwitchCell class],
+            [YPModuleButtonCell class],
         ];
         [classs enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [tableView registerClass:obj forCellReuseIdentifier:NSStringFromClass(obj)];

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YPRouterManager : NSObject
 
-@property (nonatomic, readonly) YPPageRouterModule *homeRouter;
+@property (nonatomic, readonly) YPPageRouter *homeRouter;
 
 + (instancetype)shareInstance;
 
