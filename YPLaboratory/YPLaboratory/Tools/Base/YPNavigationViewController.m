@@ -35,34 +35,10 @@
         self.navigationBar.barTintColor = nil;
     }
     
-//
     self.navigationBar.titleTextAttributes = @{
         NSFontAttributeName: [UIFont boldSystemFontOfSize:18.f],
         NSForegroundColorAttributeName: [UIColor yp_blackColor],
     };
-//    self.navigationBar.barTintColor = [UIColor redColor];
-    // 移除导航栏的底部线条
-//    self.navigationBar.shadowImage = [UIImage new];
-        
-    //    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    //    [self.navigationBar setShadowImage:[UIImage new]];
-    //    UIColor *barTintColor = [UIColor yp_backgroundColor];
-    //    // 设置导航栏的背景颜色
-    //    [self.navigationController.navigationBar setBarTintColor:barTintColor];
-    //    // 取消导航栏的半透明效果
-    //    [self.navigationController.navigationBar setTranslucent:NO];
-    //    //去除底部黑线
-    //    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
-    //    if (@available(iOS 13.0, *)) {
-    //        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-    //        [appearance configureWithOpaqueBackground];
-    //        appearance.backgroundColor = barTintColor;
-    //        [appearance setShadowImage:[[UIImage alloc] init]];
-    //        self.navigationController.navigationBar.standardAppearance = appearance;
-    //        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
-    //    } else {
-    //        // Fallback on earlier versions
-    //    }
     
     
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {

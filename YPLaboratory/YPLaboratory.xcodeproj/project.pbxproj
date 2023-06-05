@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17B65EBA9D4EF60CD769BD61 /* Pods_YPLaboratory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */; };
+		6019B7922A2E376B0083FA7F /* YPPageRouterModule+Update.m in Sources */ = {isa = PBXBuildFile; fileRef = 6019B7912A2E376B0083FA7F /* YPPageRouterModule+Update.m */; };
 		60257FD52A1A15A100091000 /* YPModuleNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FCB2A1A15A100091000 /* YPModuleNormalCell.m */; };
 		60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FCE2A1A15A100091000 /* YPModuleTableProxy.m */; };
 		60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60257FD22A1A15A100091000 /* YPModuleTableViewController.m */; };
@@ -77,6 +78,8 @@
 		04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPLaboratory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		147C523EF284DF972559701E /* Pods-YPLaboratory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.debug.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.debug.xcconfig"; sourceTree = "<group>"; };
 		24FAB785EC799017D07AD679 /* Pods-YPLaboratory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.release.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.release.xcconfig"; sourceTree = "<group>"; };
+		6019B7902A2E376B0083FA7F /* YPPageRouterModule+Update.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+Update.h"; sourceTree = "<group>"; };
+		6019B7912A2E376B0083FA7F /* YPPageRouterModule+Update.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+Update.m"; sourceTree = "<group>"; };
 		60257FCB2A1A15A100091000 /* YPModuleNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPModuleNormalCell.m; sourceTree = "<group>"; };
 		60257FCC2A1A15A100091000 /* YPModuleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPModuleTableViewController.h; sourceTree = "<group>"; };
 		60257FCE2A1A15A100091000 /* YPModuleTableProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPModuleTableProxy.m; sourceTree = "<group>"; };
@@ -528,6 +531,8 @@
 				60FF4CC02A1F547B00A2D04B /* YPPageRouterModule.h */,
 				60FF4CC12A1F547B00A2D04B /* YPPageRouterModule.m */,
 				60FF4CBC2A1F4C5700A2D04B /* YPPageRouterModuleCategoryHeader.h */,
+				6019B7902A2E376B0083FA7F /* YPPageRouterModule+Update.h */,
+				6019B7912A2E376B0083FA7F /* YPPageRouterModule+Update.m */,
 				606929EF2A2B904C0045D2EB /* YPPageRouterModule+Home.h */,
 				606929F02A2B904C0045D2EB /* YPPageRouterModule+Home.m */,
 				60FF4CB82A1F4C0100A2D04B /* YPPageRouterModule+Component.h */,
@@ -713,6 +718,7 @@
 				6034B31E2A14A9D90024E610 /* YPUserProxy.m in Sources */,
 				6034B31C2A14A9D90024E610 /* YPUserTableViewCell.m in Sources */,
 				6034B31F2A14A9D90024E610 /* YPUserViewController.m in Sources */,
+				6019B7922A2E376B0083FA7F /* YPPageRouterModule+Update.m in Sources */,
 				60257FFD2A1A5F2400091000 /* AppDelegate+YPThird.m in Sources */,
 				6034B2E52A14A6E40024E610 /* UITableViewCell+YPLaboratory.m in Sources */,
 				6034B2DB2A14A6E40024E610 /* UIViewController+YPLaboratory.m in Sources */,

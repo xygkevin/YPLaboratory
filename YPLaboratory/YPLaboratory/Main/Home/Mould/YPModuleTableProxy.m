@@ -85,7 +85,8 @@
     [[YPShakeManager shareInstance] tapShare];
     YPPageRouterModule *module = self.viewModel.dataList[indexPath.section];
     YPPageRouter *cellModel = module.routers[indexPath.row];
-    [[UIViewController yp_topViewController] pushToControllerWithRouter:cellModel];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [[UIViewController yp_topViewController] pushToControllerWithRouter:cellModel cell:cell];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

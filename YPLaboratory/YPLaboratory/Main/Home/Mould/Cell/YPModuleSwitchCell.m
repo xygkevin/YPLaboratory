@@ -57,7 +57,7 @@
 - (void)didChangeSwitch:(UISwitch *)cellSwitch {
     self.cellModel.content = @(!self.cellModel.content.boolValue).stringValue;
     if (self.cellModel.didSelectedCallback) {
-        self.cellModel.didSelectedCallback(self.cellModel);
+        self.cellModel.didSelectedCallback(self.cellModel, self);
     }
 }
 

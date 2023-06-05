@@ -34,7 +34,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) YPPageRouterType type;
 @property (nonatomic, assign) BOOL useInsetGrouped;// 是否使用 InsetGrouped default NO
 
-@property (nonatomic, copy) void (^didSelectedCallback)(YPPageRouter *router);// 事件cell回调，设置了就有回调
+@property (nonatomic, copy) void (^didSelectedCallback)(YPPageRouter *router, UIView *cell);// 事件cell回调，设置了就有回调
 
 @end
 

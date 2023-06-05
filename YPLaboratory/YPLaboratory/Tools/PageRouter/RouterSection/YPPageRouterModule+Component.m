@@ -6,6 +6,7 @@
 //
 
 #import "YPPageRouterModule+Component.h"
+#import "YPPageRouterModule+Update.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -163,28 +164,68 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"时分".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = @"HH:mm";
+        NSString *format = @"HH:mm";
+        element.content = format;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSDate *date = [NSDate yp_DateWithString:router.content dateFormat:format];
+            YPDatePickerAlert *alert = [YPDatePickerAlert popupWithDate:date?:[NSDate date] completeBlock:^(NSDate * _Nonnull date) {
+                router.content = [date yp_StringWithDateFormat:format];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.datePickerMode = UIDatePickerModeTime;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"年月日".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = @"yyyy-MM-dd";
+        NSString *format = @"yyyy-MM-dd";
+        element.content = format;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSDate *date = [NSDate yp_DateWithString:router.content dateFormat:format];
+            YPDatePickerAlert *alert = [YPDatePickerAlert popupWithDate:date?:[NSDate date] completeBlock:^(NSDate * _Nonnull date) {
+                router.content = [date yp_StringWithDateFormat:format];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.datePickerMode = UIDatePickerModeDate;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"年月日分".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = @"yyyy-MM-dd HH:mm";
+        NSString *format = @"yyyy-MM-dd HH:mm";
+        element.content = format;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSDate *date = [NSDate yp_DateWithString:router.content dateFormat:format];
+            YPDatePickerAlert *alert = [YPDatePickerAlert popupWithDate:date?:[NSDate date] completeBlock:^(NSDate * _Nonnull date) {
+                router.content = [date yp_StringWithDateFormat:format];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.datePickerMode = UIDatePickerModeDateAndTime;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"倒计时".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = @"HH:mm";
+        NSString *format = @"HH:mm";
+        element.content = format;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSDate *date = [NSDate yp_DateWithString:router.content dateFormat:format];
+            YPDatePickerAlert *alert = [YPDatePickerAlert popupWithDate:date?:[NSDate date] completeBlock:^(NSDate * _Nonnull date) {
+                router.content = [date yp_StringWithDateFormat:format];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.datePickerMode = UIDatePickerModeCountDownTimer;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -192,6 +233,16 @@
         element.title = @"字体选择".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = @"Font";
+        NSArray *fonts = [UIFont familyNames];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [fonts indexOfObject:router.content];
+            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fonts completeBlock:^(NSInteger index) {
+                router.content = fonts[index];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -199,6 +250,16 @@
         element.title = @"颜色选择".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = @"Color";
+        NSArray *colors = [UIColor yp_allColors];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [colors indexOfObject:router.content];
+            YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
+                router.content = colors[index];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -206,6 +267,16 @@
         element.title = @"性别选择".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = @"Gender";
+        NSArray *fonts = @[@"男",@"女",@"沃尔玛购物袋"];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [fonts indexOfObject:router.content];
+            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fonts completeBlock:^(NSInteger index) {
+                router.content = fonts[index];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -237,7 +308,7 @@
     if (@available(iOS 13.0, *)) {
         barTintColor = navigationBar.standardAppearance.backgroundColor;
     }
-    UIImage *shadowImage = navigationBar.shadowImage;
+//    UIImage *shadowImage = navigationBar.shadowImage;
     NSDictionary *titleTextAttributes = navigationBar.titleTextAttributes;
     UIFont *titleFont = titleTextAttributes[NSFontAttributeName];
     NSString *titleFontName = titleFont.fontName;
@@ -249,7 +320,7 @@
             element.title = @"导航滚动边缘变化（iOS 13）".yp_localizedString;
             element.type = YPPageRouterTypeSwitch;
             element.content = @(enableScrollEdgeAppearance).stringValue;
-            element.didSelectedCallback = ^(YPPageRouter * _Nonnull router) {
+            element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
                 BOOL enableScrollEdgeAppearance = router.content.boolValue;
                 if (enableScrollEdgeAppearance) {
                     navigationBar.scrollEdgeAppearance = nil;
@@ -265,7 +336,7 @@
         element.title = @"导航是否半透明".yp_localizedString;
         element.type = YPPageRouterTypeSwitch;
         element.content = @(translucent).stringValue;
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router) {
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
             BOOL translucent = router.content.boolValue;
             navigationBar.translucent = translucent;
         };
@@ -283,6 +354,17 @@
         element.title = @"导航主题色调".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = [UIColor yp_hexStringFromColor:tintColor];
+        NSArray *colors = [UIColor yp_allColors];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [colors indexOfObject:router.content];
+            YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
+                router.content = colors[index];
+                [self yp_reloadCurrentCell:cell];
+                navigationBar.tintColor = [UIColor yp_colorWithHexString:router.content];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -290,6 +372,20 @@
         element.title = @"导航背景颜色".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = [UIColor yp_hexStringFromColor:barTintColor];
+        NSArray *colors = [UIColor yp_allColors];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [colors indexOfObject:router.content];
+            YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
+                router.content = colors[index];
+                [self yp_reloadCurrentCell:cell];
+                navigationBar.barTintColor = [UIColor yp_colorWithHexString:router.content];
+                if (@available(iOS 13.0, *)) {
+                    navigationBar.standardAppearance.backgroundColor = navigationBar.barTintColor;
+                }
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
 //    {
@@ -304,6 +400,20 @@
         element.title = @"导航字体".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = titleFontName;
+        NSArray *fonts = [UIFont familyNames];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [fonts indexOfObject:router.content];
+            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fonts completeBlock:^(NSInteger index) {
+                router.content = fonts[index];
+                [self yp_reloadCurrentCell:cell];
+                NSMutableDictionary *titleTextAttributes = [navigationBar.titleTextAttributes mutableCopy];
+                UIFont *font = titleTextAttributes[NSFontAttributeName];
+                titleTextAttributes[NSFontAttributeName] = [UIFont fontWithName:router.content size:font.pointSize];
+                [navigationBar setTitleTextAttributes:titleTextAttributes];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -311,6 +421,19 @@
         element.title = @"导航字体颜色".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.content = [UIColor yp_hexStringFromColor:titleColor];
+        NSArray *colors = [UIColor yp_allColors];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [colors indexOfObject:router.content];
+            YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
+                router.content = colors[index];
+                [self yp_reloadCurrentCell:cell];
+                NSMutableDictionary *titleTextAttributes = [navigationBar.titleTextAttributes mutableCopy];
+                titleTextAttributes[NSForegroundColorAttributeName] = [UIColor yp_colorWithHexString:router.content];
+                [navigationBar setTitleTextAttributes:titleTextAttributes];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {

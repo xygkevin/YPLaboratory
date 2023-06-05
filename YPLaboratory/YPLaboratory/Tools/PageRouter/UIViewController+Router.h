@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 统一处理 push 逻辑
 /// - Parameter pageRouter: pageRouter
-- (void)pushToControllerWithRouter:(YPPageRouter *)pageRouter;
+/// - Parameter cell: cell
+- (void)pushToControllerWithRouter:(YPPageRouter *)pageRouter cell:(UIView *)cell;
 
 @end
 
