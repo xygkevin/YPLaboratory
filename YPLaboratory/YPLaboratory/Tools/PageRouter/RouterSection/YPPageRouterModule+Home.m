@@ -44,12 +44,6 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"ls_app_icon_build".yp_localizedString;
-        element.type = YPPageRouterTypeTable;
-        [dataList addObject:element];
-    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"ls_network".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
@@ -72,14 +66,8 @@
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"ls_file_management".yp_localizedString;
-        element.type = YPPageRouterTypeTable;
-        [dataList addObject:element];
-    }
-    YPPageRouterModule *section1 = [[YPPageRouterModule alloc] initWithRouters:dataList];
     
+    YPPageRouterModule *section1 = [[YPPageRouterModule alloc] initWithRouters:dataList];
     NSMutableArray *dataList2 = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
@@ -94,7 +82,17 @@
         [dataList2 addObject:element];
     }
     YPPageRouterModule *section2 = [[YPPageRouterModule alloc] initWithRouters:dataList2];
-    return @[section1, section2];
+    
+    NSMutableArray *dataList3 = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"全栈".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList3 addObject:element];
+    }
+    YPPageRouterModule *section3 = [[YPPageRouterModule alloc] initWithRouters:dataList3];
+    
+    return @[section1, section3, section2];
 }
 
 @end

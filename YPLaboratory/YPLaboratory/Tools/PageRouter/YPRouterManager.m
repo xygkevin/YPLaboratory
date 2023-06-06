@@ -31,6 +31,7 @@
     YPPageRouter *homeRouter = [[YPPageRouter alloc] init];
     homeRouter.title = @"ls_home_tabbar".yp_localizedString;
     homeRouter.type = YPPageRouterTypeTable;
+//    homeRouter.useInsetGrouped = YES;
     return homeRouter;
 }
 
@@ -52,10 +53,10 @@
         dataList = [YPPageRouterModule ComponentRouters_YPAlertView];
     } else if ([model.title isEqualToString:@"普通加载框（YPLoadingView）".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_YPLoadingView];
-    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
-        
-    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
-        
+    } else if ([model.title isEqualToString:@"ls_idea_box".yp_localizedString]) {
+        dataList = [YPPageRouterModule IdeaRouters];
+    } else if ([model.title isEqualToString:@"全栈".yp_localizedString]) {
+        dataList = [YPPageRouterModule FullStackRouters];
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
         
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {

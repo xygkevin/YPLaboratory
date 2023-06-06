@@ -15,6 +15,12 @@
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"ls_file_management".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"丰富多彩的 cell（UITableView）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];

@@ -10,7 +10,9 @@
 
 #import "YPPageRouterModule+Update.h"
 #import "YPPageRouterModule+Home.h"
+#import "YPPageRouterModule+Idea.h"
 #import "YPPageRouterModule+Component.h"
 #import "YPPageRouterModule+AppleInternalPurchase.h"
+#import "YPPageRouterModule+FullStack.h"
 
 #endif /* Header_h */
