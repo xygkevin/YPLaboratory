@@ -294,39 +294,17 @@
 + (NSArray *)ComponentRouters_NavigationBar {
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     UINavigationBar *navigationBar = [UIViewController yp_topViewController].navigationController.navigationBar;
-    
-    BOOL enableScrollEdgeAppearance = NO;
-    if (@available(iOS 13.0, *)) {
-        enableScrollEdgeAppearance = navigationBar.scrollEdgeAppearance ? NO : YES;
-    } else {
-        enableScrollEdgeAppearance = NO;
-    }
-    
-    BOOL translucent = navigationBar.translucent;
-    UIColor *tintColor = navigationBar.tintColor;
-    UIColor *barTintColor = navigationBar.barTintColor;
-    if (@available(iOS 13.0, *)) {
-        barTintColor = navigationBar.standardAppearance.backgroundColor;
-    }
-//    UIImage *shadowImage = navigationBar.shadowImage;
-    NSDictionary *titleTextAttributes = navigationBar.titleTextAttributes;
-    UIFont *titleFont = titleTextAttributes[NSFontAttributeName];
-    NSString *titleFontName = titleFont.fontName;
-    UIColor *titleColor = titleTextAttributes[NSForegroundColorAttributeName];
     BOOL isBold = YES;
     {
         if (@available(iOS 13.0, *)) {
             YPPageRouter *element = [[YPPageRouter alloc] init];
             element.title = @"导航滚动边缘变化（iOS 13）".yp_localizedString;
             element.type = YPPageRouterTypeSwitch;
-            element.content = @(enableScrollEdgeAppearance).stringValue;
+            element.content = @(navigationBar.yp_enableScrollEdgeAppearance).stringValue;
             element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
                 BOOL enableScrollEdgeAppearance = router.content.boolValue;
-                if (enableScrollEdgeAppearance) {
-                    navigationBar.scrollEdgeAppearance = nil;
-                } else {
-                    navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance;
-                }
+                navigationBar.yp_enableScrollEdgeAppearance = enableScrollEdgeAppearance;
+                [navigationBar yp_configuration];
             };
             [dataList addObject:element];
         }
@@ -335,32 +313,51 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航是否半透明".yp_localizedString;
         element.type = YPPageRouterTypeSwitch;
-        element.content = @(translucent).stringValue;
+        element.content = @(navigationBar.yp_translucent).stringValue;
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
             BOOL translucent = router.content.boolValue;
-            navigationBar.translucent = translucent;
+            navigationBar.yp_translucent = translucent;
+            [navigationBar yp_configuration];
         };
         [dataList addObject:element];
     }
-//    {
-//        YPPageRouter *element = [[YPPageRouter alloc] init];
-//        element.title = @"导航是否全透明".yp_localizedString;
-//        element.type = YPPageRouterTypeSwitch;
-//        element.content = @"0";
-//        [dataList addObject:element];
-//    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航是否全透明".yp_localizedString;
+        element.type = YPPageRouterTypeSwitch;
+        element.content = @(navigationBar.yp_transparent).stringValue;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            BOOL transparent = router.content.boolValue;
+            navigationBar.yp_transparent = transparent;
+            [navigationBar yp_configuration];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"导航是否显示底部线条".yp_localizedString;
+        element.type = YPPageRouterTypeSwitch;
+        element.content = @(navigationBar.yp_hideBottomLine).stringValue;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            BOOL hideBottomLine = router.content.boolValue;
+            navigationBar.yp_hideBottomLine = hideBottomLine;
+            [navigationBar yp_configuration];
+        };
+        [dataList addObject:element];
+    }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航主题色调".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = [UIColor yp_hexStringFromColor:tintColor];
+        element.content = [UIColor yp_hexStringFromColor:navigationBar.yp_tintColor];
         NSArray *colors = [UIColor yp_allColors];
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
             NSUInteger currentIndex = [colors indexOfObject:router.content];
             YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
                 router.content = colors[index];
                 [self yp_reloadCurrentCell:cell];
-                navigationBar.tintColor = [UIColor yp_colorWithHexString:router.content];
+                navigationBar.yp_tintColor = [UIColor yp_colorWithHexString:router.content];
+                [navigationBar yp_configuration];
             }];
             alert.currentIndex = currentIndex;
             [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
@@ -371,45 +368,15 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航背景颜色".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = [UIColor yp_hexStringFromColor:barTintColor];
+        element.content = [UIColor yp_hexStringFromColor:navigationBar.yp_backgroundColor];
         NSArray *colors = [UIColor yp_allColors];
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
             NSUInteger currentIndex = [colors indexOfObject:router.content];
             YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
                 router.content = colors[index];
                 [self yp_reloadCurrentCell:cell];
-                navigationBar.barTintColor = [UIColor yp_colorWithHexString:router.content];
-                if (@available(iOS 13.0, *)) {
-                    navigationBar.standardAppearance.backgroundColor = navigationBar.barTintColor;
-                }
-            }];
-            alert.currentIndex = currentIndex;
-            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
-        };
-        [dataList addObject:element];
-    }
-//    {
-//        YPPageRouter *element = [[YPPageRouter alloc] init];
-//        element.title = @"导航是否显示底部线条".yp_localizedString;
-//        element.type = YPPageRouterTypeSwitch;
-//        element.content = @"0";
-//        [dataList addObject:element];
-//    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"导航字体".yp_localizedString;
-        element.type = YPPageRouterTypeNormal;
-        element.content = titleFontName;
-        NSArray *fonts = [UIFont familyNames];
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
-            NSUInteger currentIndex = [fonts indexOfObject:router.content];
-            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fonts completeBlock:^(NSInteger index) {
-                router.content = fonts[index];
-                [self yp_reloadCurrentCell:cell];
-                NSMutableDictionary *titleTextAttributes = [navigationBar.titleTextAttributes mutableCopy];
-                UIFont *font = titleTextAttributes[NSFontAttributeName];
-                titleTextAttributes[NSFontAttributeName] = [UIFont fontWithName:router.content size:font.pointSize];
-                [navigationBar setTitleTextAttributes:titleTextAttributes];
+                navigationBar.yp_backgroundColor = [UIColor yp_colorWithHexString:router.content];
+                [navigationBar yp_configuration];
             }];
             alert.currentIndex = currentIndex;
             [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
@@ -420,16 +387,15 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航字体颜色".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = [UIColor yp_hexStringFromColor:titleColor];
+        element.content = [UIColor yp_hexStringFromColor:navigationBar.yp_titleColor];
         NSArray *colors = [UIColor yp_allColors];
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
             NSUInteger currentIndex = [colors indexOfObject:router.content];
             YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
                 router.content = colors[index];
                 [self yp_reloadCurrentCell:cell];
-                NSMutableDictionary *titleTextAttributes = [navigationBar.titleTextAttributes mutableCopy];
-                titleTextAttributes[NSForegroundColorAttributeName] = [UIColor yp_colorWithHexString:router.content];
-                [navigationBar setTitleTextAttributes:titleTextAttributes];
+                navigationBar.yp_titleColor = [UIColor yp_colorWithHexString:router.content];
+                [navigationBar yp_configuration];
             }];
             alert.currentIndex = currentIndex;
             [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
@@ -440,20 +406,64 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航字体大小".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.content = @(titleFont.pointSize).stringValue;
+        element.content = @(navigationBar.yp_titleFont.pointSize).stringValue;
+        NSMutableArray *fontSizes = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 100; i++) {
+            [fontSizes addObject:@(i).stringValue];
+        }
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [fontSizes indexOfObject:router.content];
+            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fontSizes completeBlock:^(NSInteger index) {
+                router.content = fontSizes[index];
+                [self yp_reloadCurrentCell:cell];
+                UIFont *font = navigationBar.yp_titleFont;
+                UIFontDescriptorSymbolicTraits traits = font.fontDescriptor.symbolicTraits;
+                if (traits & UIFontDescriptorTraitBold) {
+                    font = [UIFont boldSystemFontOfSize:router.content.intValue];
+                } else {
+                    font = [UIFont systemFontOfSize:router.content.intValue];
+                }
+                navigationBar.yp_titleFont = font;
+                [navigationBar yp_configuration];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
+        BOOL isBold = NO;
+        UIFont *font = navigationBar.yp_titleFont;
+        UIFontDescriptorSymbolicTraits traits = font.fontDescriptor.symbolicTraits;
+        if (traits & UIFontDescriptorTraitBold) {
+            isBold = YES;
+        } else {
+            isBold = NO;
+        }
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"导航字体是否加粗".yp_localizedString;
         element.type = YPPageRouterTypeSwitch;
         element.content = @(isBold).stringValue;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            BOOL isBold = router.content.boolValue;
+            UIFont *font = navigationBar.yp_titleFont;
+            if (isBold) {
+                font = [UIFont boldSystemFontOfSize:font.pointSize];
+            } else {
+                font = [UIFont systemFontOfSize:font.pointSize];
+            }
+            navigationBar.yp_titleFont = font;
+            [navigationBar yp_configuration];
+        };
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"重置所有".yp_localizedString;
         element.type = YPPageRouterTypeButton;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            [navigationBar yp_resetConfiguration];
+        };
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
