@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)yp_reloadCurrentCell:(UIView *)cell;
 
++ (void)yp_reloadCurrentModuleControl;
+
 @end
 
 NS_ASSUME_NONNULL_END

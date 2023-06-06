@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) YPPageRouter *model;
 
+- (void)startLoadData;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,6 +6,7 @@
 //
 
 #import "YPPageRouterModule+Update.h"
+#import "YPModuleTableViewController.h"
 
 @implementation YPPageRouterModule (Update)
 
@@ -14,6 +15,13 @@
         [(UITableViewCell *)cell yp_reloadCurrentTableViewCell];
     } else if ([cell isKindOfClass:[UICollectionViewCell class]]) {
         
+    }
+}
+
++ (void)yp_reloadCurrentModuleControl {
+    UIViewController *vc = [UIViewController yp_topViewController];
+    if ([vc isKindOfClass:[YPModuleTableViewController class]]) {
+        [(YPModuleTableViewController *)vc startLoadData];
     }
 }
 
