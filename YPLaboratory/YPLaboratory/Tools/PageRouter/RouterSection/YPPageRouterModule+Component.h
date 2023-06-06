@@ -26,6 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 // 导航栏控制
 + (NSArray *)ComponentRouters_NavigationBar;
 
+// 普通提示框（YPAlertView）
++ (NSArray *)ComponentRouters_YPAlertView;
+
+// 普通加载框（YPLoadingView）
++ (NSArray *)ComponentRouters_YPLoadingView;
+
 @end
 
 NS_ASSUME_NONNULL_END

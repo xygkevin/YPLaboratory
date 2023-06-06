@@ -51,6 +51,12 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通加载框（YPLoadingView）".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"自定义弹框（YPPopupController）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
@@ -294,7 +300,6 @@
 + (NSArray *)ComponentRouters_NavigationBar {
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     UINavigationBar *navigationBar = [UIViewController yp_topViewController].navigationController.navigationBar;
-    BOOL isBold = YES;
     {
         if (@available(iOS 13.0, *)) {
             YPPageRouter *element = [[YPPageRouter alloc] init];
@@ -465,6 +470,62 @@
             [navigationBar yp_resetConfiguration];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self yp_reloadCurrentModuleControl];
+            });
+        };
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
+// 普通提示框（YPAlertView）
++ (NSArray *)ComponentRouters_YPAlertView {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通提示框(自动隐藏)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPAlertView alertText:router.title];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通提示框(自动隐藏 5s)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPAlertView alertText:router.title duration:5.f];
+        };
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
+// 普通加载框（YPLoadingView）
++ (NSArray *)ComponentRouters_YPLoadingView {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通加载框(自动隐藏)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPLoadingView showLoading];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [YPLoadingView hideLoading];
+            });
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通提示框(带文字)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPLoadingView showLoading:router.title];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [YPLoadingView hideLoading];
             });
         };
         [dataList addObject:element];

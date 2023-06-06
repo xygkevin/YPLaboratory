@@ -48,6 +48,40 @@
         dataList = [YPPageRouterModule ComponentRouters_PickerView];
     } else if ([model.title isEqualToString:@"导航栏控制（UINavigationBar）".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_NavigationBar];
+    } else if ([model.title isEqualToString:@"普通提示框（YPAlertView）".yp_localizedString]) {
+        dataList = [YPPageRouterModule ComponentRouters_YPAlertView];
+    } else if ([model.title isEqualToString:@"普通加载框（YPLoadingView）".yp_localizedString]) {
+        dataList = [YPPageRouterModule ComponentRouters_YPLoadingView];
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
+    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
+        
     }
     return [dataList copy];
 }
