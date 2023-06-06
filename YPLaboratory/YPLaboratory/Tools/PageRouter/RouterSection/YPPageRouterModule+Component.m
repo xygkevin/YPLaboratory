@@ -340,7 +340,7 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"导航是否显示底部线条".yp_localizedString;
+        element.title = @"导航是否隐藏底部线条".yp_localizedString;
         element.type = YPPageRouterTypeSwitch;
         element.content = @(navigationBar.yp_hideBottomLine).stringValue;
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {

@@ -25,6 +25,18 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"常见架构模式".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"常见算法".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"ls_apple_internal_purchase".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         element.useInsetGrouped = YES;
