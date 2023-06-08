@@ -16,7 +16,13 @@
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"ls_file_management".yp_localizedString;
-        element.type = YPPageRouterTypeTable;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            NSString *path = NSHomeDirectory();
+            YPFileBrowser *browser = [[YPFileBrowser alloc] initWithPath:path];
+            YPNavigationViewController *nav = [[YPNavigationViewController alloc] initWithRootViewController:browser];
+            [[UIViewController yp_topViewController] presentViewController:nav animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
