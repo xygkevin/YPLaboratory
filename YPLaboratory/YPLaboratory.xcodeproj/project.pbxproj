@@ -68,6 +68,8 @@
 		606929FB2A2BA4B20045D2EB /* YPModuleButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606929FA2A2BA4B20045D2EB /* YPModuleButtonCell.m */; };
 		6073390F2A2F8E050096EC27 /* YPPageRouterModule+Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073390E2A2F8E050096EC27 /* YPPageRouterModule+Idea.m */; };
 		607339122A2F921F0096EC27 /* YPPageRouterModule+FullStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */; };
+		6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */; };
+		6099531F2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099531E2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.m */; };
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
 		60FF4C992A1B17A600A2D04B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF4C982A1B17A600A2D04B /* StoreKit.framework */; };
@@ -201,6 +203,10 @@
 		6073390E2A2F8E050096EC27 /* YPPageRouterModule+Idea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+Idea.m"; sourceTree = "<group>"; };
 		607339102A2F921F0096EC27 /* YPPageRouterModule+FullStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+FullStack.h"; sourceTree = "<group>"; };
 		607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+FullStack.m"; sourceTree = "<group>"; };
+		609953192A3B0A60004BD3E1 /* YPIconBuildManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPIconBuildManager.h; sourceTree = "<group>"; };
+		6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPIconBuildManager.m; sourceTree = "<group>"; };
+		6099531D2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPIconBuildTableViewCell.h; sourceTree = "<group>"; };
+		6099531E2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPIconBuildTableViewCell.m; sourceTree = "<group>"; };
 		60C44E7F2A186D6F0073EA3F /* YPRouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPRouterManager.h; sourceTree = "<group>"; };
 		60C44E802A186D6F0073EA3F /* YPRouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPRouterManager.m; sourceTree = "<group>"; };
 		60C44E822A186E2C0073EA3F /* YPPageRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouter.h; sourceTree = "<group>"; };
@@ -463,6 +469,7 @@
 		6034B2F12A14A9050024E610 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				609953062A3AFF82004BD3E1 /* Idea */,
 				60257FCA2A1A14F000091000 /* Mould */,
 			);
 			path = Home;
@@ -513,6 +520,41 @@
 				606929F42A2BA07C0045D2EB /* YPModuleSwitchCell.m */,
 				606929F92A2BA4B20045D2EB /* YPModuleButtonCell.h */,
 				606929FA2A2BA4B20045D2EB /* YPModuleButtonCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		609953062A3AFF82004BD3E1 /* Idea */ = {
+			isa = PBXGroup;
+			children = (
+				609953172A3B0A2B004BD3E1 /* IconBuild */,
+			);
+			path = Idea;
+			sourceTree = "<group>";
+		};
+		609953172A3B0A2B004BD3E1 /* IconBuild */ = {
+			isa = PBXGroup;
+			children = (
+				6099531C2A3B0DFE004BD3E1 /* Cell */,
+				609953182A3B0A37004BD3E1 /* Manager */,
+			);
+			path = IconBuild;
+			sourceTree = "<group>";
+		};
+		609953182A3B0A37004BD3E1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				609953192A3B0A60004BD3E1 /* YPIconBuildManager.h */,
+				6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6099531C2A3B0DFE004BD3E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6099531D2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.h */,
+				6099531E2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -717,6 +759,8 @@
 				60257FD92A1A15A100091000 /* YPModuleTableViewModel.m in Sources */,
 				602580002A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m in Sources */,
 				606929F82A2BA0BB0045D2EB /* YPModuleBaseCell.m in Sources */,
+				6099531F2A3B0E33004BD3E1 /* YPIconBuildTableViewCell.m in Sources */,
+				6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */,
 				607339122A2F921F0096EC27 /* YPPageRouterModule+FullStack.m in Sources */,
 				60257FF22A1A452100091000 /* YPHTTPRequest.m in Sources */,
 				6034B31D2A14A9D90024E610 /* YPUserModel.m in Sources */,

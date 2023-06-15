@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 程序之美
 + (NSArray *)IdeaRouters;
 
+// 图标制作
++ (NSArray *)IdeaRouters_IconBuild;
+
 @end
 
 NS_ASSUME_NONNULL_END

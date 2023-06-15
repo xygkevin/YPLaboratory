@@ -6,6 +6,7 @@
 //
 
 #import "YPPageRouterModule+Idea.h"
+#import "YPIconBuildManager.h"
 
 @implementation YPPageRouterModule (Idea)
 
@@ -76,6 +77,57 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"App 公祭日置灰模式".yp_localizedString;
         element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"手持弹幕".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
++ (NSArray *)IdeaRouters_IconBuild {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = [YPIconBuildManager shareInstance].iconPath?:@"";
+        element.type = YPPageRouterTypeTableCell;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"Beta 文字".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [YPIconBuildManager shareInstance].betaString?:@"";
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"Beta 文字颜色".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [UIColor yp_hexStringFromColor:[YPIconBuildManager shareInstance].betaColor];
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"Beta 背景颜色".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = [UIColor yp_hexStringFromColor:[YPIconBuildManager shareInstance].betaBackgroundColor];
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"添加BETA".yp_localizedString;
+        element.type = YPPageRouterTypeButton;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"制作 App 图标".yp_localizedString;
+        element.type = YPPageRouterTypeButton;
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
