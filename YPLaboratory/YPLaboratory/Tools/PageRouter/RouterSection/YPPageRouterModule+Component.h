@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 普通加载框（YPLoadingView）
 + (NSArray *)ComponentRouters_YPLoadingView;
 
+// 自定义弹框（YPPopupController）
++ (NSArray *)ComponentRouters_YPPopupController;
+
 @end
 
 NS_ASSUME_NONNULL_END

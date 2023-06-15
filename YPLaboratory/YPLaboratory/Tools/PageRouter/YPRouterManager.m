@@ -59,6 +59,8 @@
         dataList = [YPPageRouterModule FullStackRouters];
     } else if ([model.title isEqualToString:@"ls_app_icon_build".yp_localizedString]) {
         dataList = [YPPageRouterModule IdeaRouters_IconBuild];
+    } else if ([model.title isEqualToString:@"自定义弹框（YPPopupController）".yp_localizedString]) {
+        dataList = [YPPageRouterModule ComponentRouters_YPPopupController];
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
         
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {

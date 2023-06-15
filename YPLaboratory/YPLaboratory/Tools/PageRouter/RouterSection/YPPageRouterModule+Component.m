@@ -15,18 +15,6 @@
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"ls_file_management".yp_localizedString;
-        element.type = YPPageRouterTypeNormal;
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
-            NSString *path = NSHomeDirectory();
-            YPFileBrowser *browser = [[YPFileBrowser alloc] initWithPath:path];
-            YPNavigationViewController *nav = [[YPNavigationViewController alloc] initWithRootViewController:browser];
-            [[UIViewController yp_topViewController] presentViewController:nav animated:YES completion:nil];
-        };
-        [dataList addObject:element];
-    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"丰富多彩的 cell（UITableView）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
@@ -83,6 +71,18 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"轮播图（YPSwiperView）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"ls_file_management".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            NSString *path = NSHomeDirectory();
+            YPFileBrowser *browser = [[YPFileBrowser alloc] initWithPath:path];
+            YPNavigationViewController *nav = [[YPNavigationViewController alloc] initWithRootViewController:browser];
+            [[UIViewController yp_topViewController] presentViewController:nav animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -544,6 +544,37 @@
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
     return @[section];
+}
+
+// 自定义弹框（YPPopupController）
++ (NSArray *)ComponentRouters_YPPopupController {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通加载框(自动隐藏)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPLoadingView showLoading];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [YPLoadingView hideLoading];
+            });
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通提示框(带文字)".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            [YPLoadingView showLoading:router.title];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [YPLoadingView hideLoading];
+            });
+        };
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section,];
 }
 
 @end
