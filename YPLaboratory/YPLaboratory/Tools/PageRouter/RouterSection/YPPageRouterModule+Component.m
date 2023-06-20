@@ -155,7 +155,7 @@
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"丰富多彩的 cell（UITableView）".yp_localizedString;
-        element.type = YPPageRouterTypeTableCell;
+        element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
@@ -168,7 +168,7 @@
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"丰富多彩的 cell（UITableView）".yp_localizedString;
-        element.type = YPPageRouterTypeTableCell;
+        element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];

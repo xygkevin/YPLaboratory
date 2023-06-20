@@ -43,7 +43,6 @@
         case YPPageRouterTypeAppCheckUpdate:
         case YPPageRouterTypeAppComment:
         case YPPageRouterTypeAppInternalPurchase:
-        case YPPageRouterTypeTableCell:
         case YPPageRouterTypeCollectionCell: {
             identifier = @"YPModuleNormalCell";
         }
@@ -56,11 +55,20 @@
             identifier = @"YPModuleButtonCell";
         }
             break;
+        case YPPageRouterTypeTableCell: {
+            identifier = NSStringFromClass(cellModel.extend);
+        }
+            break;
         default: {
             identifier = @"YPModuleBaseCell";
         }
             break;
     }
+    
+    if (!identifier.length) {
+        identifier = @"YPModuleBaseCell";
+    }
+    
     YPModuleBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     cell.cellModel = cellModel;
     return cell;
@@ -72,7 +80,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 44.f;
+    YPPageRouterModule *module = self.viewModel.dataList[indexPath.section];
+    YPPageRouter *cellModel = module.routers[indexPath.row];
+    CGFloat height = cellModel.cellHeight;
     return height;
 }
 

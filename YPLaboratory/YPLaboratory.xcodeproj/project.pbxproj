@@ -62,6 +62,8 @@
 		6034B31E2A14A9D90024E610 /* YPUserProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B3152A14A9D90024E610 /* YPUserProxy.m */; };
 		6034B31F2A14A9D90024E610 /* YPUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B3192A14A9D90024E610 /* YPUserViewController.m */; };
 		6034B3202A14A9D90024E610 /* YPUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B31A2A14A9D90024E610 /* YPUserViewModel.m */; };
+		603E39AF2A41A4860055283A /* YPSingleLineInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603E39AE2A41A4860055283A /* YPSingleLineInputViewController.m */; };
+		603E39B22A41A4920055283A /* YPMultiLineInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603E39B12A41A4920055283A /* YPMultiLineInputViewController.m */; };
 		606929F12A2B904C0045D2EB /* YPPageRouterModule+Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 606929F02A2B904C0045D2EB /* YPPageRouterModule+Home.m */; };
 		606929F52A2BA07C0045D2EB /* YPModuleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606929F42A2BA07C0045D2EB /* YPModuleSwitchCell.m */; };
 		606929F82A2BA0BB0045D2EB /* YPModuleBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 606929F72A2BA0BB0045D2EB /* YPModuleBaseCell.m */; };
@@ -191,6 +193,10 @@
 		6034B3192A14A9D90024E610 /* YPUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUserViewController.m; sourceTree = "<group>"; };
 		6034B31A2A14A9D90024E610 /* YPUserViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPUserViewModel.m; sourceTree = "<group>"; };
 		6034B31B2A14A9D90024E610 /* YPUserProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPUserProxy.h; sourceTree = "<group>"; };
+		603E39AD2A41A4860055283A /* YPSingleLineInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPSingleLineInputViewController.h; sourceTree = "<group>"; };
+		603E39AE2A41A4860055283A /* YPSingleLineInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPSingleLineInputViewController.m; sourceTree = "<group>"; };
+		603E39B02A41A4920055283A /* YPMultiLineInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPMultiLineInputViewController.h; sourceTree = "<group>"; };
+		603E39B12A41A4920055283A /* YPMultiLineInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPMultiLineInputViewController.m; sourceTree = "<group>"; };
 		606929EF2A2B904C0045D2EB /* YPPageRouterModule+Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+Home.h"; sourceTree = "<group>"; };
 		606929F02A2B904C0045D2EB /* YPPageRouterModule+Home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+Home.m"; sourceTree = "<group>"; };
 		606929F32A2BA07C0045D2EB /* YPModuleSwitchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPModuleSwitchCell.h; sourceTree = "<group>"; };
@@ -395,6 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				6034B2F02A14A8620024E610 /* YPLaboratoryTools.h */,
+				603E39AC2A41A4450055283A /* YPMultiLineInputViewController */,
+				603E39AB2A41A3420055283A /* YPSingleLineInputViewController */,
 				602580052A1A604F00091000 /* Tracking */,
 				602580012A1A5FC400091000 /* Notification */,
 				60257FF72A1A5B7400091000 /* Requests */,
@@ -507,6 +515,24 @@
 				6034B3192A14A9D90024E610 /* YPUserViewController.m */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		603E39AB2A41A3420055283A /* YPSingleLineInputViewController */ = {
+			isa = PBXGroup;
+			children = (
+				603E39AD2A41A4860055283A /* YPSingleLineInputViewController.h */,
+				603E39AE2A41A4860055283A /* YPSingleLineInputViewController.m */,
+			);
+			path = YPSingleLineInputViewController;
+			sourceTree = "<group>";
+		};
+		603E39AC2A41A4450055283A /* YPMultiLineInputViewController */ = {
+			isa = PBXGroup;
+			children = (
+				603E39B02A41A4920055283A /* YPMultiLineInputViewController.h */,
+				603E39B12A41A4920055283A /* YPMultiLineInputViewController.m */,
+			);
+			path = YPMultiLineInputViewController;
 			sourceTree = "<group>";
 		};
 		606929F22A2BA01D0045D2EB /* Cell */ = {
@@ -741,6 +767,7 @@
 				60FF4CBA2A1F4C0100A2D04B /* YPPageRouterModule+Component.m in Sources */,
 				60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */,
 				60257FD82A1A15A100091000 /* YPModuleTableViewController.m in Sources */,
+				603E39B22A41A4920055283A /* YPMultiLineInputViewController.m in Sources */,
 				60257FD72A1A15A100091000 /* YPModuleTableProxy.m in Sources */,
 				60257FD52A1A15A100091000 /* YPModuleNormalCell.m in Sources */,
 				60257FF12A1A452100091000 /* YPHTTPResponse.m in Sources */,
@@ -755,6 +782,7 @@
 				6034B30D2A14A99A0024E610 /* YPWorldModel.m in Sources */,
 				6034B2E42A14A6E40024E610 /* UITextView+YPLaboratory.m in Sources */,
 				6034B2E12A14A6E40024E610 /* UITextField+YPLaboratory.m in Sources */,
+				603E39AF2A41A4860055283A /* YPSingleLineInputViewController.m in Sources */,
 				60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */,
 				60257FD92A1A15A100091000 /* YPModuleTableViewModel.m in Sources */,
 				602580002A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m in Sources */,

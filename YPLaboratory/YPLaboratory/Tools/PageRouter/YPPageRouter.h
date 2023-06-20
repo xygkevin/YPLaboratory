@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *placeholder;
 @property (nonatomic, strong) id extend;
+@property (nonatomic, assign) CGFloat cellHeight;// default 44.f
 @property (nonatomic, assign) YPPageRouterType type;
 @property (nonatomic, assign) BOOL useInsetGrouped;// 是否使用 InsetGrouped default NO
 

@@ -13,6 +13,7 @@
     if (self = [super init]) {
         self.enable = YES;
         self.useInsetGrouped = NO;
+        self.cellHeight = 44.f;
     }
     return self;
 }
