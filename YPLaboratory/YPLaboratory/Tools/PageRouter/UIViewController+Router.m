@@ -13,19 +13,19 @@
 
 - (void)pushToControllerWithRouter:(YPPageRouter *)pageRouter cell:(UIView *)cell {
     YPPageRouter *cellModel = pageRouter;
+    if (pageRouter.didSelectedCallback) {
+        pageRouter.didSelectedCallback(pageRouter, cell);
+        return;
+    }
     switch (cellModel.type) {
         case YPPageRouterTypeNormal:
-        case YPPageRouterTypeButton:
-        case YPPageRouterTypeSwitch: {
-            // 响应事件
-            if (pageRouter.didSelectedCallback) {
-                pageRouter.didSelectedCallback(pageRouter, cell);
-            }
+        case YPPageRouterTypeTableCell:
+        case YPPageRouterTypeSwitch:
+        case YPPageRouterTypeCopy: {
+            
         }
             break;
-        case YPPageRouterTypeCopy:
-            // Copy model->content
-            break;
+        case YPPageRouterTypeButton:
         case YPPageRouterTypeTable:
         case YPPageRouterTypeCollection: {
             // 是一个列表  table | collection
@@ -98,10 +98,6 @@
                     }
                 });
             }];
-        }
-            break;
-        case YPPageRouterTypeTableCell: {
-            // 子视图，需要指定展示cell（table）
         }
             break;
         case YPPageRouterTypeCollectionCell: {

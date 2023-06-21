@@ -18,8 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIColor *betaBackgroundColor;// default red
 
 @property (nonatomic, readonly) UIImage *iconImage;// 根据 iconPath 转化成 image
+@property (nonatomic, readonly) NSArray <NSDictionary *>*icons;// icon 配置
 
 + (instancetype)shareInstance;
+
+- (void)resetIconBuild;
+
+- (void)iconBuild;
 
 @end
 

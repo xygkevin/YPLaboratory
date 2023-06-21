@@ -56,7 +56,7 @@
         }
             break;
         case YPPageRouterTypeTableCell: {
-            identifier = NSStringFromClass(cellModel.extend);
+            identifier = NSStringFromClass(cellModel.cellClass);
         }
             break;
         default: {

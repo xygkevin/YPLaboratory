@@ -30,6 +30,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *placeholder;
+@property (nonatomic, assign) Class cellClass;
 @property (nonatomic, strong) id extend;
 @property (nonatomic, assign) CGFloat cellHeight;// default 44.f
 @property (nonatomic, assign) YPPageRouterType type;

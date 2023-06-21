@@ -13,7 +13,7 @@
 #import "YPModuleNormalCell.h"
 #import "YPModuleSwitchCell.h"
 #import "YPModuleButtonCell.h"
-#import "YPIconBuildTableViewCell.h"
+#import "YPModuleImageCell.h"
 
 @interface YPModuleTableViewController () <YPModuleTableViewModelDelegate>
 
@@ -90,7 +90,7 @@
             [YPModuleNormalCell class],
             [YPModuleSwitchCell class],
             [YPModuleButtonCell class],
-            [YPIconBuildTableViewCell class],
+            [YPModuleImageCell class],
         ];
         [classs enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [tableView registerClass:obj forCellReuseIdentifier:NSStringFromClass(obj)];

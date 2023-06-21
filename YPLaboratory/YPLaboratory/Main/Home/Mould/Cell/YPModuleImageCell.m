@@ -1,21 +1,20 @@
 //
-//  YPIconBuildTableViewCell.m
+//  YPModuleImageCell.m
 //  YPLaboratory
 //
-//  Created by Hansen on 2023/6/15.
+//  Created by Hansen on 2023/6/21.
 //
 
-#import "YPIconBuildTableViewCell.h"
-#import "YPIconBuildManager.h"
+#import "YPModuleImageCell.h"
 
-@interface YPIconBuildTableViewCell ()
+@interface YPModuleImageCell ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *iconImageView;
 
 @end
 
-@implementation YPIconBuildTableViewCell
+@implementation YPModuleImageCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -34,8 +33,8 @@
 
 - (void)setCellModel:(YPPageRouter *)cellModel {
     [super setCellModel:cellModel];
-    self.titleLabel.text = [YPIconBuildManager shareInstance].iconPath.length ? [YPIconBuildManager shareInstance].iconPath : (cellModel.title?:@"");
-    self.iconImageView.image = [YPIconBuildManager shareInstance].iconImage;
+    self.titleLabel.text = cellModel.title?:@"";
+    self.iconImageView.image = cellModel.extend;
 }
 
 - (void)layoutSubviews {
@@ -47,7 +46,7 @@
     self.titleLabel.frame = f1;
     
     CGRect f2 = bounds;
-    f2.size = CGSizeMake(55.f, 55.f);
+    f2.size = CGSizeMake(f1.size.height - 15.f, f1.size.height - 15.f);
     f2.origin.y = (bounds.size.height - f2.size.height) / 2.f;
     f2.origin.x = bounds.size.width - f2.size.width - 5.f;
     self.iconImageView.frame = f2;
@@ -58,7 +57,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont systemFontOfSize:14.f];
+        _titleLabel.font = [UIFont systemFontOfSize:17.f];
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;

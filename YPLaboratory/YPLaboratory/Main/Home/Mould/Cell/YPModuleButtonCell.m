@@ -53,7 +53,7 @@
     if (!_button) {
         _button = [[YPButton alloc] init];
         _button.userInteractionEnabled = NO;
-        _button.titleLabel.font = [UIFont systemFontOfSize:16.f];
+        _button.titleLabel.font = [UIFont systemFontOfSize:17.f];
         [_button setTitleColor:[UIColor yp_themeColor] forState:UIControlStateNormal];
     }
     return _button;
