@@ -64,7 +64,7 @@
         // 将UIImage保存到本地相册
         UIImage *image = self.iconImage;
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-            PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+            [PHAssetChangeRequest creationRequestForAssetFromImage:image];
             // 可以根据需要设置保存的图片属性，例如调整图片大小、添加元数据等
         } completionHandler:^(BOOL success, NSError *error) {
             if (success) {
@@ -119,60 +119,36 @@
 
 - (NSArray<NSDictionary *> *)icons {
     NSMutableArray *icons = [[NSMutableArray alloc] init];
-    [icons addObjectsFromArray:@[
-        @{@"name":@"IconiPhone-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-        @{@"name":@"IconiPhone-20@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-        @{@"name":@"IconiPhone-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-        @{@"name":@"IconiPhone-29@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-        @{@"name":@"IconiPhone-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-        @{@"name":@"IconiPhone-40@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-        @{@"name":@"IconiPhone-60@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
-        @{@"name":@"IconiPhone-60@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
-        @{@"name":@"IconiPad-20.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-        @{@"name":@"IconiPad-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-        @{@"name":@"IconiPad-29.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-        @{@"name":@"IconiPad-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-        @{@"name":@"IconiPad-40.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-        @{@"name":@"IconiPad-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-        @{@"name":@"IconiPad-76.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
-        @{@"name":@"IconiPad-76@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
-        @{@"name":@"IconiPad-167.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(167.f, 167.f)]},
-        @{@"name":@"IconAppStore-1024.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
-    ]];
+    if (TARGET_OS_SIMULATOR) {
+        // 模拟器
+        [icons addObjectsFromArray:@[
+            @{@"name":@"IconiPhone-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
+            @{@"name":@"IconiPhone-20@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
+            @{@"name":@"IconiPhone-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
+            @{@"name":@"IconiPhone-29@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
+            @{@"name":@"IconiPhone-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
+            @{@"name":@"IconiPhone-40@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
+            @{@"name":@"IconiPhone-60@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
+            @{@"name":@"IconiPhone-60@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
+            @{@"name":@"IconiPad-20.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
+            @{@"name":@"IconiPad-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
+            @{@"name":@"IconiPad-29.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
+            @{@"name":@"IconiPad-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
+            @{@"name":@"IconiPad-40.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
+            @{@"name":@"IconiPad-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
+            @{@"name":@"IconiPad-76.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
+            @{@"name":@"IconiPad-76@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
+            @{@"name":@"IconiPad-167.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(167.f, 167.f)]},
+            @{@"name":@"IconAppStore-1024.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
+        ]];
+    } else {
+        // 真机
+        [icons addObjectsFromArray:@[
+            @{@"name":@"IconAppStore-1024.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
+        ]];
+    }
     return icons;
 }
 
 @end
 
-/*
- 
- if (TARGET_OS_SIMULATOR) {
-     // 模拟器
-     [icons addObjectsFromArray:@[
-         @{@"name":@"IconiPhone-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-         @{@"name":@"IconiPhone-20@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-         @{@"name":@"IconiPhone-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-         @{@"name":@"IconiPhone-29@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-         @{@"name":@"IconiPhone-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-         @{@"name":@"IconiPhone-40@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-         @{@"name":@"IconiPhone-60@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
-         @{@"name":@"IconiPhone-60@3x.png",@"scale":@"3",@"size":[NSValue valueWithCGSize:CGSizeMake(60.f, 60.f)]},
-         @{@"name":@"IconiPad-20.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-         @{@"name":@"IconiPad-20@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(20.f, 20.f)]},
-         @{@"name":@"IconiPad-29.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-         @{@"name":@"IconiPad-29@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(29.f, 29.f)]},
-         @{@"name":@"IconiPad-40.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-         @{@"name":@"IconiPad-40@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(40.f, 40.f)]},
-         @{@"name":@"IconiPad-76.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
-         @{@"name":@"IconiPad-76@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
-         @{@"name":@"IconiPad-167.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(167.f, 167.f)]},
-         @{@"name":@"IconAppStore-1024.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
-     ]];
- } else {
-     // 真机
-     [icons addObjectsFromArray:@[
-         @{@"name":@"IconAppStore-1024.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
-     ]];
- }
- 
- */

@@ -110,7 +110,7 @@
                 vc.maxLength = 1000;
                 vc.didCompleteCallback = ^(NSString * _Nonnull text) {
                     [YPIconBuildManager shareInstance].iconPath = text;
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         [self yp_reloadCurrentModuleControl];
                     });
                 };
@@ -145,7 +145,7 @@
             vc.maxLength = 10;
             vc.didCompleteCallback = ^(NSString * _Nonnull text) {
                 [YPIconBuildManager shareInstance].betaString = text;
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self yp_reloadCurrentModuleControl];
                 });
             };
