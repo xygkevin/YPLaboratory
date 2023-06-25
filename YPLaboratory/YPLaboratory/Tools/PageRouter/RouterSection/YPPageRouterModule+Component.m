@@ -63,14 +63,34 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"好用的多行输入框（YPTextView）".yp_localizedString;
+        element.title = @"轮播图（YPSwiperView）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"轮播图（YPSwiperView）".yp_localizedString;
+        element.title = @"简单的单行输入框".yp_localizedString;
         element.type = YPPageRouterTypeTable;
+        element.placeholder = element.title;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPSingleLineInputViewController *vc = [[YPSingleLineInputViewController alloc] init];
+            vc.title = router.title;
+            vc.placeholder = router.placeholder;
+            [[UIViewController yp_topViewController].navigationController pushViewController:vc animated:YES];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"简单的多行输入框".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        element.placeholder = element.title;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPMultiLineInputViewController *vc = [[YPMultiLineInputViewController alloc] init];
+            vc.title = router.title;
+            vc.placeholder = router.placeholder;
+            [[UIViewController yp_topViewController].navigationController pushViewController:vc animated:YES];
+        };
         [dataList addObject:element];
     }
     {
@@ -551,22 +571,22 @@
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"普通加载框(自动隐藏)".yp_localizedString;
+        element.title = @"例如：更新弹框".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
-            [YPLoadingView showLoading];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [YPLoadingView hideLoading];
-            });
-        };
         [dataList addObject:element];
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"普通提示框(带文字)".yp_localizedString;
+        element.title = @"例如：常见的 Alert 框".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"例如：".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
-            [YPLoadingView showLoading:router.title];
+            [YPLoadingView showLoading];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [YPLoadingView hideLoading];
             });
