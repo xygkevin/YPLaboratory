@@ -587,12 +587,6 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"例如：".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
-            [YPLoadingView showLoading];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [YPLoadingView hideLoading];
-            });
-        };
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
