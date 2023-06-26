@@ -14,6 +14,8 @@
 #import "YPModuleSwitchCell.h"
 #import "YPModuleButtonCell.h"
 #import "YPModuleImageCell.h"
+#import "YPSwiperNormalTableViewCell.h"
+#import "YPSwiperCardTableViewCell.h"
 
 @interface YPModuleTableViewController () <YPModuleTableViewModelDelegate>
 
@@ -91,6 +93,8 @@
             [YPModuleSwitchCell class],
             [YPModuleButtonCell class],
             [YPModuleImageCell class],
+            [YPSwiperNormalTableViewCell class],
+            [YPSwiperCardTableViewCell class],
         ];
         [classs enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [tableView registerClass:obj forCellReuseIdentifier:NSStringFromClass(obj)];

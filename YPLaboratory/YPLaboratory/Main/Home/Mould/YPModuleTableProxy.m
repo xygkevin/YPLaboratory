@@ -66,7 +66,7 @@
     }
     
     if (!identifier.length) {
-        identifier = @"YPModuleBaseCell";
+        identifier = @"YPModuleNormalCell";
     }
     
     YPModuleBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

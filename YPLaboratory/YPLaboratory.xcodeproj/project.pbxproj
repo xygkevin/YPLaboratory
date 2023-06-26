@@ -73,6 +73,8 @@
 		6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */; };
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
+		60F52A9B2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F52A9A2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m */; };
+		60F52A9E2A49374900BB6254 /* YPSwiperCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F52A9D2A49374900BB6254 /* YPSwiperCardTableViewCell.m */; };
 		60FF4C992A1B17A600A2D04B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF4C982A1B17A600A2D04B /* StoreKit.framework */; };
 		60FF4CBA2A1F4C0100A2D04B /* YPPageRouterModule+Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4CB92A1F4C0100A2D04B /* YPPageRouterModule+Component.m */; };
 		60FF4CBF2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF4CBE2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m */; };
@@ -213,6 +215,10 @@
 		60C44E802A186D6F0073EA3F /* YPRouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPRouterManager.m; sourceTree = "<group>"; };
 		60C44E822A186E2C0073EA3F /* YPPageRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouter.h; sourceTree = "<group>"; };
 		60C44E832A186E2C0073EA3F /* YPPageRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPPageRouter.m; sourceTree = "<group>"; };
+		60F52A992A4936A400BB6254 /* YPSwiperNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPSwiperNormalTableViewCell.h; sourceTree = "<group>"; };
+		60F52A9A2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPSwiperNormalTableViewCell.m; sourceTree = "<group>"; };
+		60F52A9C2A49374900BB6254 /* YPSwiperCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPSwiperCardTableViewCell.h; sourceTree = "<group>"; };
+		60F52A9D2A49374900BB6254 /* YPSwiperCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPSwiperCardTableViewCell.m; sourceTree = "<group>"; };
 		60FF4C982A1B17A600A2D04B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		60FF4C9A2A1B17AD00A2D04B /* YPLaboratory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YPLaboratory.entitlements; sourceTree = "<group>"; };
 		60FF4CB82A1F4C0100A2D04B /* YPPageRouterModule+Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+Component.h"; sourceTree = "<group>"; };
@@ -531,6 +537,7 @@
 		609953062A3AFF82004BD3E1 /* Idea */ = {
 			isa = PBXGroup;
 			children = (
+				60F52A972A49366200BB6254 /* Component */,
 				609953172A3B0A2B004BD3E1 /* IconBuild */,
 			);
 			path = Idea;
@@ -558,6 +565,25 @@
 				60C44E802A186D6F0073EA3F /* YPRouterManager.m */,
 			);
 			path = PageRouter;
+			sourceTree = "<group>";
+		};
+		60F52A972A49366200BB6254 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				60F52A982A49367B00BB6254 /* Swiper */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		60F52A982A49367B00BB6254 /* Swiper */ = {
+			isa = PBXGroup;
+			children = (
+				60F52A992A4936A400BB6254 /* YPSwiperNormalTableViewCell.h */,
+				60F52A9A2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m */,
+				60F52A9C2A49374900BB6254 /* YPSwiperCardTableViewCell.h */,
+				60F52A9D2A49374900BB6254 /* YPSwiperCardTableViewCell.m */,
+			);
+			path = Swiper;
 			sourceTree = "<group>";
 		};
 		60FF4CBB2A1F4C0700A2D04B /* RouterSection */ = {
@@ -725,6 +751,7 @@
 				6034B30C2A14A99A0024E610 /* YPWorldTableViewCell.m in Sources */,
 				606929F52A2BA07C0045D2EB /* YPModuleSwitchCell.m in Sources */,
 				6034B2862A14A64E0024E610 /* YPRootViewController.m in Sources */,
+				60F52A9E2A49374900BB6254 /* YPSwiperCardTableViewCell.m in Sources */,
 				606929FB2A2BA4B20045D2EB /* YPModuleButtonCell.m in Sources */,
 				60FF4CBA2A1F4C0100A2D04B /* YPPageRouterModule+Component.m in Sources */,
 				60257FE82A1A400C00091000 /* YPLaboratoryDevice.m in Sources */,
@@ -769,6 +796,7 @@
 				606929F12A2B904C0045D2EB /* YPPageRouterModule+Home.m in Sources */,
 				6034B3102A14A99A0024E610 /* YPWorldViewModel.m in Sources */,
 				6034B2672A1485D90024E610 /* main.m in Sources */,
+				60F52A9B2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

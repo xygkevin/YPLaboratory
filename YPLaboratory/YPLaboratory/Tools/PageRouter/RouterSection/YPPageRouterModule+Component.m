@@ -7,6 +7,8 @@
 
 #import "YPPageRouterModule+Component.h"
 #import "YPPageRouterModule+Update.h"
+#import "YPSwiperNormalTableViewCell.h"
+#import "YPSwiperCardTableViewCell.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -595,6 +597,47 @@
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
     return @[section,];
+}
+
+// 轮播图（YPSwiperView）
++ (NSArray *)ComponentRouters_YPSwiperView {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"普通轮播图".yp_localizedString;
+        element.type = YPPageRouterTypeTableCell;
+        element.cellClass = [YPSwiperNormalTableViewCell class];
+        element.cellHeight = 200.f;
+        element.extend = @[
+            @"",
+            @"",
+            @"",
+            @"",
+        ];
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    section.headerTitle = @"普通轮播图".yp_localizedString;
+    
+    NSMutableArray *dataList2 = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"卡片轮播图".yp_localizedString;
+        element.type = YPPageRouterTypeTableCell;
+        element.cellHeight = 200.f;
+        element.cellClass = [YPSwiperCardTableViewCell class];
+        element.extend = @[
+            @"",
+            @"",
+            @"",
+            @"",
+        ];
+        [dataList2 addObject:element];
+    }
+    YPPageRouterModule *section2 = [[YPPageRouterModule alloc] initWithRouters:dataList2];
+    section2.headerTitle = @"卡片轮播图".yp_localizedString;
+    
+    return @[section, section2];
 }
 
 @end

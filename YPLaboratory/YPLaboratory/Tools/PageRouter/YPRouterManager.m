@@ -63,8 +63,8 @@
         dataList = [YPPageRouterModule ComponentRouters_YPPopupController];
     } else if ([model.title isEqualToString:@"制作 App 图标".yp_localizedString]) {
         dataList = [YPPageRouterModule IdeaRouters_IconBuild_Setup];
-    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
-        
+    } else if ([model.title isEqualToString:@"轮播图（YPSwiperView）".yp_localizedString]) {
+        dataList = [YPPageRouterModule ComponentRouters_YPSwiperView];
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
         
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {

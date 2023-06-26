@@ -35,6 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 自定义弹框（YPPopupController）
 + (NSArray *)ComponentRouters_YPPopupController;
 
+// 轮播图（YPSwiperView）
++ (NSArray *)ComponentRouters_YPSwiperView;
+
 @end
 
 NS_ASSUME_NONNULL_END
