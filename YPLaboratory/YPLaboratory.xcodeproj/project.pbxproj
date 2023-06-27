@@ -28,6 +28,7 @@
 		6025800A2A1A604F00091000 /* TapDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602580062A1A604F00091000 /* TapDB.framework */; };
 		6025800B2A1A604F00091000 /* TapCommonSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602580082A1A604F00091000 /* TapCommonSDK.framework */; };
 		6025800C2A1A604F00091000 /* YPTrackingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 602580092A1A604F00091000 /* YPTrackingManager.m */; };
+		602B3D292A4B3C8000A62E1F /* YPAppUpdatePopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602B3D282A4B3C8000A62E1F /* YPAppUpdatePopupController.m */; };
 		6034B2562A1485D80024E610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034B2552A1485D80024E610 /* AppDelegate.m */; };
 		6034B25F2A1485D80024E610 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6034B25D2A1485D80024E610 /* Main.storyboard */; };
 		6034B2612A1485D90024E610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6034B2602A1485D90024E610 /* Assets.xcassets */; };
@@ -122,6 +123,8 @@
 		602580072A1A604F00091000 /* YPTrackingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTrackingManager.h; sourceTree = "<group>"; };
 		602580082A1A604F00091000 /* TapCommonSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TapCommonSDK.framework; sourceTree = "<group>"; };
 		602580092A1A604F00091000 /* YPTrackingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTrackingManager.m; sourceTree = "<group>"; };
+		602B3D272A4B3C8000A62E1F /* YPAppUpdatePopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppUpdatePopupController.h; sourceTree = "<group>"; };
+		602B3D282A4B3C8000A62E1F /* YPAppUpdatePopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppUpdatePopupController.m; sourceTree = "<group>"; };
 		6034B2512A1485D80024E610 /* YPLaboratory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YPLaboratory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6034B2542A1485D80024E610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6034B2552A1485D80024E610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -331,6 +334,25 @@
 			path = Tracking;
 			sourceTree = "<group>";
 		};
+		602B3D262A4B3C6B00A62E1F /* AppUpdatePopup */ = {
+			isa = PBXGroup;
+			children = (
+				602B3D272A4B3C8000A62E1F /* YPAppUpdatePopupController.h */,
+				602B3D282A4B3C8000A62E1F /* YPAppUpdatePopupController.m */,
+			);
+			path = AppUpdatePopup;
+			sourceTree = "<group>";
+		};
+		602B3D2A2A4B3D1200A62E1F /* MouldDemo */ = {
+			isa = PBXGroup;
+			children = (
+				609953172A3B0A2B004BD3E1 /* IconBuild */,
+				602B3D262A4B3C6B00A62E1F /* AppUpdatePopup */,
+				60F52A982A49367B00BB6254 /* Swiper */,
+			);
+			path = MouldDemo;
+			sourceTree = "<group>";
+		};
 		6034B2482A1485D80024E610 = {
 			isa = PBXGroup;
 			children = (
@@ -477,7 +499,7 @@
 		6034B2F12A14A9050024E610 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				609953062A3AFF82004BD3E1 /* Idea */,
+				602B3D2A2A4B3D1200A62E1F /* MouldDemo */,
 				60257FCA2A1A14F000091000 /* Mould */,
 			);
 			path = Home;
@@ -534,15 +556,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		609953062A3AFF82004BD3E1 /* Idea */ = {
-			isa = PBXGroup;
-			children = (
-				60F52A972A49366200BB6254 /* Component */,
-				609953172A3B0A2B004BD3E1 /* IconBuild */,
-			);
-			path = Idea;
-			sourceTree = "<group>";
-		};
 		609953172A3B0A2B004BD3E1 /* IconBuild */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,14 +578,6 @@
 				60C44E802A186D6F0073EA3F /* YPRouterManager.m */,
 			);
 			path = PageRouter;
-			sourceTree = "<group>";
-		};
-		60F52A972A49366200BB6254 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-				60F52A982A49367B00BB6254 /* Swiper */,
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		60F52A982A49367B00BB6254 /* Swiper */ = {
@@ -778,6 +783,7 @@
 				6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */,
 				607339122A2F921F0096EC27 /* YPPageRouterModule+FullStack.m in Sources */,
 				60257FF22A1A452100091000 /* YPHTTPRequest.m in Sources */,
+				602B3D292A4B3C8000A62E1F /* YPAppUpdatePopupController.m in Sources */,
 				6034B31D2A14A9D90024E610 /* YPUserModel.m in Sources */,
 				6034B2EC2A14A7940024E610 /* YPBaseViewController.m in Sources */,
 				60257FFA2A1A5B8200091000 /* YPHTTPInitiateRequest.m in Sources */,

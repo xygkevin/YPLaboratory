@@ -86,7 +86,7 @@
     NSMutableArray *dataList3 = [[NSMutableArray alloc] init];
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"全栈".yp_localizedString;
+        element.title = @"全栈日记".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList3 addObject:element];
     }

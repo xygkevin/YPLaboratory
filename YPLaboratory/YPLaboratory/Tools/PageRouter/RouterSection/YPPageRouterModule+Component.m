@@ -9,6 +9,7 @@
 #import "YPPageRouterModule+Update.h"
 #import "YPSwiperNormalTableViewCell.h"
 #import "YPSwiperCardTableViewCell.h"
+#import "YPAppUpdatePopupController.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -575,6 +576,12 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"例如：更新弹框".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPAppUpdatePopupController *vc = [YPAppUpdatePopupController popupControllerWithStyle:YPPopupControllerStyleMiddle];
+            vc.updateTitle = @"发现新的版本 v10.xxx";
+            vc.updateContent = @"全新界面设计，更加现代化和直观..........";
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     {
@@ -585,7 +592,64 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"例如：".yp_localizedString;
+        element.title = @"例如：时间选择弹框".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        NSString *format = @"yyyy-MM-dd HH:mm";
+        element.content = format;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSDate *date = [NSDate yp_DateWithString:router.content dateFormat:format];
+            YPDatePickerAlert *alert = [YPDatePickerAlert popupWithDate:date?:[NSDate date] completeBlock:^(NSDate * _Nonnull date) {
+                router.content = [date yp_StringWithDateFormat:format];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.datePickerMode = UIDatePickerModeDateAndTime;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"例如：单选弹框".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Font";
+        NSArray *fonts = [UIFont familyNames];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [fonts indexOfObject:router.content];
+            YPPickerAlert *alert = [YPPickerAlert popupWithOptions:fonts completeBlock:^(NSInteger index) {
+                router.content = fonts[index];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"例如：颜色选择弹框".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.content = @"Color";
+        NSArray *colors = [UIColor yp_allColors];
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView *cell) {
+            NSUInteger currentIndex = [colors indexOfObject:router.content];
+            YPColorPickerAlert *alert = [YPColorPickerAlert popupWithOptions:colors completeBlock:^(NSInteger index) {
+                router.content = colors[index];
+                [self yp_reloadCurrentCell:cell];
+            }];
+            alert.currentIndex = currentIndex;
+            [[UIViewController yp_topViewController] presentViewController:alert animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"例如：内嵌 H5".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"例如：内嵌 H5".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         [dataList addObject:element];
     }
