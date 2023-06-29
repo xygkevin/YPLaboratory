@@ -10,6 +10,8 @@
 #import "YPSwiperNormalTableViewCell.h"
 #import "YPSwiperCardTableViewCell.h"
 #import "YPAppUpdatePopupController.h"
+#import "YPAppH5PopupController.h"
+#import "YPH5WebviewController.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -68,6 +70,17 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"轮播图（YPSwiperView）".yp_localizedString;
         element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"APP内打开一个网页".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPH5WebviewController *vc = [[YPH5WebviewController alloc] init];
+            vc.request = [NSURLRequest requestWithURL:[NSURL URLWithString:[YPSettingManager sharedInstance].personalHomepage]];
+            [[UIViewController yp_topViewController].navigationController pushViewController:vc animated:YES];
+        };
         [dataList addObject:element];
     }
     {
@@ -586,12 +599,6 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"例如：常见的 Alert 框".yp_localizedString;
-        element.type = YPPageRouterTypeNormal;
-        [dataList addObject:element];
-    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"例如：时间选择弹框".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
         NSString *format = @"yyyy-MM-dd HH:mm";
@@ -645,12 +652,12 @@
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"例如：内嵌 H5".yp_localizedString;
         element.type = YPPageRouterTypeNormal;
-        [dataList addObject:element];
-    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"例如：内嵌 H5".yp_localizedString;
-        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPAppH5PopupController *vc = [YPAppH5PopupController popupControllerWithStyle:YPPopupControllerStyleMiddle];
+            vc.h5Title = @"内嵌 H5 弹框";
+            vc.request = [NSURLRequest requestWithURL:[NSURL URLWithString:[YPSettingManager sharedInstance].personalHomepage]];
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
         [dataList addObject:element];
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];

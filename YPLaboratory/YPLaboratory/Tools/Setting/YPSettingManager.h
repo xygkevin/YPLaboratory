@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *advertisement;// 广告内容json 由接口返回
 @property (nonatomic, strong) NSString *extend;// 版本更新扩展 由接口返回
 
+@property (nonatomic, readonly) NSString *personalHomepage;// https://github.com/HansenCCC
+
 + (instancetype)sharedInstance;
 
 - (void)showComment;

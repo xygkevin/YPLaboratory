@@ -72,6 +72,8 @@
 		6073390F2A2F8E050096EC27 /* YPPageRouterModule+Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073390E2A2F8E050096EC27 /* YPPageRouterModule+Idea.m */; };
 		607339122A2F921F0096EC27 /* YPPageRouterModule+FullStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */; };
 		6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */; };
+		60C1C75F2A4D8306004FC354 /* YPAppH5PopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C75E2A4D8306004FC354 /* YPAppH5PopupController.m */; };
+		60C1C7632A4D8716004FC354 /* YPH5WebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C7622A4D8716004FC354 /* YPH5WebviewController.m */; };
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
 		60F52A9B2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F52A9A2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m */; };
@@ -214,6 +216,10 @@
 		607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+FullStack.m"; sourceTree = "<group>"; };
 		609953192A3B0A60004BD3E1 /* YPIconBuildManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPIconBuildManager.h; sourceTree = "<group>"; };
 		6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPIconBuildManager.m; sourceTree = "<group>"; };
+		60C1C75D2A4D8306004FC354 /* YPAppH5PopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppH5PopupController.h; sourceTree = "<group>"; };
+		60C1C75E2A4D8306004FC354 /* YPAppH5PopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppH5PopupController.m; sourceTree = "<group>"; };
+		60C1C7612A4D8716004FC354 /* YPH5WebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPH5WebviewController.h; sourceTree = "<group>"; };
+		60C1C7622A4D8716004FC354 /* YPH5WebviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPH5WebviewController.m; sourceTree = "<group>"; };
 		60C44E7F2A186D6F0073EA3F /* YPRouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPRouterManager.h; sourceTree = "<group>"; };
 		60C44E802A186D6F0073EA3F /* YPRouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPRouterManager.m; sourceTree = "<group>"; };
 		60C44E822A186E2C0073EA3F /* YPPageRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouter.h; sourceTree = "<group>"; };
@@ -346,6 +352,8 @@
 		602B3D2A2A4B3D1200A62E1F /* MouldDemo */ = {
 			isa = PBXGroup;
 			children = (
+				60C1C7602A4D8703004FC354 /* H5Webview */,
+				60C1C75C2A4D825B004FC354 /* AppH5Popup */,
 				609953172A3B0A2B004BD3E1 /* IconBuild */,
 				602B3D262A4B3C6B00A62E1F /* AppUpdatePopup */,
 				60F52A982A49367B00BB6254 /* Swiper */,
@@ -566,6 +574,24 @@
 			path = IconBuild;
 			sourceTree = "<group>";
 		};
+		60C1C75C2A4D825B004FC354 /* AppH5Popup */ = {
+			isa = PBXGroup;
+			children = (
+				60C1C75D2A4D8306004FC354 /* YPAppH5PopupController.h */,
+				60C1C75E2A4D8306004FC354 /* YPAppH5PopupController.m */,
+			);
+			path = AppH5Popup;
+			sourceTree = "<group>";
+		};
+		60C1C7602A4D8703004FC354 /* H5Webview */ = {
+			isa = PBXGroup;
+			children = (
+				60C1C7612A4D8716004FC354 /* YPH5WebviewController.h */,
+				60C1C7622A4D8716004FC354 /* YPH5WebviewController.m */,
+			);
+			path = H5Webview;
+			sourceTree = "<group>";
+		};
 		60C44E7E2A186C970073EA3F /* PageRouter */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +792,7 @@
 				60257FF12A1A452100091000 /* YPHTTPResponse.m in Sources */,
 				6034B2DA2A14A6E40024E610 /* UIScrollView+YPLaboratory.m in Sources */,
 				60FF4CC22A1F547B00A2D04B /* YPPageRouterModule.m in Sources */,
+				60C1C7632A4D8716004FC354 /* YPH5WebviewController.m in Sources */,
 				602580042A1A5FC400091000 /* YPNoticeHeader.m in Sources */,
 				6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */,
 				6034B2E72A14A6E40024E610 /* UIImageView+YPLaboratory.m in Sources */,
@@ -790,6 +817,7 @@
 				6034B2E62A14A6E40024E610 /* NSDictionary+YPLaboratory.m in Sources */,
 				6034B2562A1485D80024E610 /* AppDelegate.m in Sources */,
 				6034B2E22A14A6E40024E610 /* NSDate+YPLaboratory.m in Sources */,
+				60C1C75F2A4D8306004FC354 /* YPAppH5PopupController.m in Sources */,
 				6034B2DD2A14A6E40024E610 /* NSString+YPLaboratory.m in Sources */,
 				60257FE72A1A400C00091000 /* YPSettingManager.m in Sources */,
 				6034B31E2A14A9D90024E610 /* YPUserProxy.m in Sources */,

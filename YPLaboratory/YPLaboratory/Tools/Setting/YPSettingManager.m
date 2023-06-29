@@ -113,4 +113,8 @@ NSString *const kYPUserDefaultsExtendKey = @"kYPUserDefaultsExtendKey";// 扩展
     return @"1568656582";
 }
 
+- (NSString *)personalHomepage {
+    return @"https://github.com/HansenCCC";
+}
+
 @end
