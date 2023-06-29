@@ -705,4 +705,9 @@
     return @[section, section2];
 }
 
+// 轮播图（YPSwiperView）
++ (NSArray *)ComponentRouters_YPSwiperView {
+    
+}
+
 @end
