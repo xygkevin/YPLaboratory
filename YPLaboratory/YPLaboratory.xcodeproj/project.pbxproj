@@ -78,6 +78,7 @@
 		60C1C7702A4E86F6004FC354 /* YPFaceTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C76F2A4E86F6004FC354 /* YPFaceTrackViewController.m */; };
 		60C1C7742A4E873D004FC354 /* YPCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C7732A4E873D004FC354 /* YPCameraViewController.m */; };
 		60C1C7782A4E878D004FC354 /* YPIdentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C7772A4E878D004FC354 /* YPIdentificationViewController.m */; };
+		60C1C77E2A502524004FC354 /* YPQRCodeScanCaptureSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C77D2A502524004FC354 /* YPQRCodeScanCaptureSessionView.m */; };
 		60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E802A186D6F0073EA3F /* YPRouterManager.m */; };
 		60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C44E832A186E2C0073EA3F /* YPPageRouter.m */; };
 		60F52A9B2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F52A9A2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m */; };
@@ -232,6 +233,8 @@
 		60C1C7732A4E873D004FC354 /* YPCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPCameraViewController.m; sourceTree = "<group>"; };
 		60C1C7762A4E878D004FC354 /* YPIdentificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPIdentificationViewController.h; sourceTree = "<group>"; };
 		60C1C7772A4E878D004FC354 /* YPIdentificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPIdentificationViewController.m; sourceTree = "<group>"; };
+		60C1C77C2A502524004FC354 /* YPQRCodeScanCaptureSessionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPQRCodeScanCaptureSessionView.h; sourceTree = "<group>"; };
+		60C1C77D2A502524004FC354 /* YPQRCodeScanCaptureSessionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPQRCodeScanCaptureSessionView.m; sourceTree = "<group>"; };
 		60C44E7F2A186D6F0073EA3F /* YPRouterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPRouterManager.h; sourceTree = "<group>"; };
 		60C44E802A186D6F0073EA3F /* YPRouterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPRouterManager.m; sourceTree = "<group>"; };
 		60C44E822A186E2C0073EA3F /* YPPageRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPPageRouter.h; sourceTree = "<group>"; };
@@ -619,6 +622,8 @@
 		60C1C7692A4E85C8004FC354 /* QRCodeScan */ = {
 			isa = PBXGroup;
 			children = (
+				60C1C77C2A502524004FC354 /* YPQRCodeScanCaptureSessionView.h */,
+				60C1C77D2A502524004FC354 /* YPQRCodeScanCaptureSessionView.m */,
 				60C1C76A2A4E85EC004FC354 /* YPQRCodeScanViewController.h */,
 				60C1C76B2A4E85EC004FC354 /* YPQRCodeScanViewController.m */,
 			);
@@ -866,6 +871,7 @@
 				6034B2E42A14A6E40024E610 /* UITextView+YPLaboratory.m in Sources */,
 				6034B2E12A14A6E40024E610 /* UITextField+YPLaboratory.m in Sources */,
 				60C44E842A186E2C0073EA3F /* YPPageRouter.m in Sources */,
+				60C1C77E2A502524004FC354 /* YPQRCodeScanCaptureSessionView.m in Sources */,
 				60C1C7702A4E86F6004FC354 /* YPFaceTrackViewController.m in Sources */,
 				60257FD92A1A15A100091000 /* YPModuleTableViewModel.m in Sources */,
 				602580002A1A5F8200091000 /* YPHTTPVerifyPaymentRequest.m in Sources */,
