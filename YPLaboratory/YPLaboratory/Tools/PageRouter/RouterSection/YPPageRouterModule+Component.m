@@ -12,6 +12,10 @@
 #import "YPAppUpdatePopupController.h"
 #import "YPAppH5PopupController.h"
 #import "YPH5WebviewController.h"
+#import "YPQRCodeScanViewController.h"
+#import "YPFaceTrackViewController.h"
+#import "YPCameraViewController.h"
+#import "YPIdentificationViewController.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -705,9 +709,60 @@
     return @[section, section2];
 }
 
-// 轮播图（YPSwiperView）
-+ (NSArray *)ComponentRouters_YPSwiperView {
-    
+// 多种功能的摄像机
++ (NSArray *)ComponentRouters_MultifunctionalCamera {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"二维码扫码".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPQRCodeScanViewController *vc = [[YPQRCodeScanViewController alloc] init];
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"人脸追踪".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPFaceTrackViewController *vc = [[YPFaceTrackViewController alloc] init];
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"身份证拍照".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPIdentificationViewController *vc = [[YPIdentificationViewController alloc] init];
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"注入 3D 模型".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            
+        };
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"自定义相机（待完善）".yp_localizedString;
+        element.type = YPPageRouterTypeNormal;
+        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+            YPCameraViewController *vc = [[YPCameraViewController alloc] init];
+            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
+        };
+        [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
 }
 
 @end

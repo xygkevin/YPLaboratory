@@ -55,7 +55,7 @@
         dataList = [YPPageRouterModule ComponentRouters_YPLoadingView];
     } else if ([model.title isEqualToString:@"ls_idea_box".yp_localizedString]) {
         dataList = [YPPageRouterModule IdeaRouters];
-    } else if ([model.title isEqualToString:@"全栈".yp_localizedString]) {
+    } else if ([model.title isEqualToString:@"全栈日记".yp_localizedString]) {
         dataList = [YPPageRouterModule FullStackRouters];
     } else if ([model.title isEqualToString:@"ls_app_icon_build".yp_localizedString]) {
         dataList = [YPPageRouterModule IdeaRouters_IconBuild];
@@ -66,7 +66,7 @@
     } else if ([model.title isEqualToString:@"轮播图（YPSwiperView）".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_YPSwiperView];
     } else if ([model.title isEqualToString:@"多种功能的摄像机".yp_localizedString]) {
-        dataList = [YPPageRouterModule ComponentRouters_YPSwiperView];
+        dataList = [YPPageRouterModule ComponentRouters_MultifunctionalCamera];
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
         
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
