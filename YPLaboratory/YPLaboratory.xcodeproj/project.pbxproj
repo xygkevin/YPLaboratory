@@ -72,6 +72,7 @@
 		6073390F2A2F8E050096EC27 /* YPPageRouterModule+Idea.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073390E2A2F8E050096EC27 /* YPPageRouterModule+Idea.m */; };
 		607339122A2F921F0096EC27 /* YPPageRouterModule+FullStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */; };
 		6099531B2A3B0A60004BD3E1 /* YPIconBuildManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */; };
+		60B1E0DF2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B1E0DE2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.m */; };
 		60C1C75F2A4D8306004FC354 /* YPAppH5PopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C75E2A4D8306004FC354 /* YPAppH5PopupController.m */; };
 		60C1C7632A4D8716004FC354 /* YPH5WebviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C7622A4D8716004FC354 /* YPH5WebviewController.m */; };
 		60C1C76C2A4E85EC004FC354 /* YPQRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C1C76B2A4E85EC004FC354 /* YPQRCodeScanViewController.m */; };
@@ -221,6 +222,8 @@
 		607339112A2F921F0096EC27 /* YPPageRouterModule+FullStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+FullStack.m"; sourceTree = "<group>"; };
 		609953192A3B0A60004BD3E1 /* YPIconBuildManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPIconBuildManager.h; sourceTree = "<group>"; };
 		6099531A2A3B0A60004BD3E1 /* YPIconBuildManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPIconBuildManager.m; sourceTree = "<group>"; };
+		60B1E0DD2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPSystemFontsTableViewCell.h; sourceTree = "<group>"; };
+		60B1E0DE2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPSystemFontsTableViewCell.m; sourceTree = "<group>"; };
 		60C1C75D2A4D8306004FC354 /* YPAppH5PopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPAppH5PopupController.h; sourceTree = "<group>"; };
 		60C1C75E2A4D8306004FC354 /* YPAppH5PopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YPAppH5PopupController.m; sourceTree = "<group>"; };
 		60C1C7612A4D8716004FC354 /* YPH5WebviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPH5WebviewController.h; sourceTree = "<group>"; };
@@ -367,6 +370,7 @@
 		602B3D2A2A4B3D1200A62E1F /* MouldDemo */ = {
 			isa = PBXGroup;
 			children = (
+				60B1E0DC2A67DDEB00DD2CE8 /* SystemFonts */,
 				60C1C7682A4E85B4004FC354 /* MultifunctionalCamera */,
 				60C1C7602A4D8703004FC354 /* H5Webview */,
 				60C1C75C2A4D825B004FC354 /* AppH5Popup */,
@@ -588,6 +592,15 @@
 				601FEB952A42FC40000B703C /* Contents.json */,
 			);
 			path = IconBuild;
+			sourceTree = "<group>";
+		};
+		60B1E0DC2A67DDEB00DD2CE8 /* SystemFonts */ = {
+			isa = PBXGroup;
+			children = (
+				60B1E0DD2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.h */,
+				60B1E0DE2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.m */,
+			);
+			path = SystemFonts;
 			sourceTree = "<group>";
 		};
 		60C1C75C2A4D825B004FC354 /* AppH5Popup */ = {
@@ -898,6 +911,7 @@
 				6034B2E52A14A6E40024E610 /* UITableViewCell+YPLaboratory.m in Sources */,
 				6034B2DB2A14A6E40024E610 /* UIViewController+YPLaboratory.m in Sources */,
 				606929F12A2B904C0045D2EB /* YPPageRouterModule+Home.m in Sources */,
+				60B1E0DF2A67DE0300DD2CE8 /* YPSystemFontsTableViewCell.m in Sources */,
 				6034B3102A14A99A0024E610 /* YPWorldViewModel.m in Sources */,
 				6034B2672A1485D90024E610 /* main.m in Sources */,
 				60F52A9B2A4936A400BB6254 /* YPSwiperNormalTableViewCell.m in Sources */,

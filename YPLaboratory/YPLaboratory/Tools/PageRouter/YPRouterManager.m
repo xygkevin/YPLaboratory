@@ -67,8 +67,8 @@
         dataList = [YPPageRouterModule ComponentRouters_YPSwiperView];
     } else if ([model.title isEqualToString:@"多种功能的摄像机".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_MultifunctionalCamera];
-    } else if ([model.title isEqualToString:@"".yp_localizedString]) {
-        
+    } else if ([model.title isEqualToString:@"系统字体".yp_localizedString]) {
+        dataList = [YPPageRouterModule ComponentRouters_SystemFonts];
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {
         
     } else if ([model.title isEqualToString:@"".yp_localizedString]) {

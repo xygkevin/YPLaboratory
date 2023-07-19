@@ -16,6 +16,7 @@
 #import "YPFaceTrackViewController.h"
 #import "YPCameraViewController.h"
 #import "YPIdentificationViewController.h"
+#import "YPSystemFontsTableViewCell.h"
 
 @implementation YPPageRouterModule (Component)
 
@@ -182,6 +183,12 @@
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
         element.title = @"跑马灯效果".yp_localizedString;
+        element.type = YPPageRouterTypeTable;
+        [dataList addObject:element];
+    }
+    {
+        YPPageRouter *element = [[YPPageRouter alloc] init];
+        element.title = @"系统字体".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
@@ -760,6 +767,30 @@
             [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
         };
         [dataList addObject:element];
+    }
+    YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
+    return @[section];
+}
+
+// 系统字体
++ (NSArray *)ComponentRouters_SystemFonts {
+    NSMutableArray *dataList = [[NSMutableArray alloc] init];
+    {
+        NSInteger index = 0;
+        for (NSString *fontName in [UIFont familyNames]) {
+            index ++;
+            YPPageRouter *element = [[YPPageRouter alloc] init];
+            element.title = [NSString stringWithFormat:@"1234567890"];
+            element.content = fontName;
+            element.type = YPPageRouterTypeTableCell;
+            element.cellClass = [YPSystemFontsTableViewCell class];
+            element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
+                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+                pasteboard.string = router.content?:@"";
+                [YPAlertView alertText:[NSString stringWithFormat:@"'%@' %@",router.content?:@"",@"字体已复制".yp_localizedString]];
+            };
+            [dataList addObject:element];
+        }
     }
     YPPageRouterModule *section = [[YPPageRouterModule alloc] initWithRouters:dataList];
     return @[section];

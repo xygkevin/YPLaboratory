@@ -41,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 多种功能的摄像机
 + (NSArray *)ComponentRouters_MultifunctionalCamera;
 
+// 系统字体
++ (NSArray *)ComponentRouters_SystemFonts;
+
 @end
 
 NS_ASSUME_NONNULL_END
