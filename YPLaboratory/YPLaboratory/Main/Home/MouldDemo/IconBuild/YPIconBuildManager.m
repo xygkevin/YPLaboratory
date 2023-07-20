@@ -139,7 +139,7 @@
             @{@"name":@"IconiPad-76.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
             @{@"name":@"IconiPad-76@2x.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(76.f, 76.f)]},
             @{@"name":@"IconiPad-167.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(167.f, 167.f)]},
-            @{@"name":@"IconAppStore-1024.png",@"scale":@"2",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
+            @{@"name":@"IconAppStore-1024.png",@"scale":@"1",@"size":[NSValue valueWithCGSize:CGSizeMake(1024.f, 1024.f)]},
         ]];
     } else {
         // 真机

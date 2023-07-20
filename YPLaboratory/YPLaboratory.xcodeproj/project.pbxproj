@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17B65EBA9D4EF60CD769BD61 /* Pods_YPLaboratory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */; };
+		6013C7352A68F89100C84F36 /* YPAVCaptureSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6013C7332A68F89100C84F36 /* YPAVCaptureSessionView.m */; };
 		6019B7922A2E376B0083FA7F /* YPPageRouterModule+Update.m in Sources */ = {isa = PBXBuildFile; fileRef = 6019B7912A2E376B0083FA7F /* YPPageRouterModule+Update.m */; };
 		601FEB942A42F350000B703C /* YPModuleImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 601FEB932A42F350000B703C /* YPModuleImageCell.m */; };
 		601FEB962A42FC40000B703C /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 601FEB952A42FC40000B703C /* Contents.json */; };
@@ -94,6 +95,8 @@
 		04CFE1650DC88C3573EB43A6 /* Pods_YPLaboratory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YPLaboratory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		147C523EF284DF972559701E /* Pods-YPLaboratory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.debug.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.debug.xcconfig"; sourceTree = "<group>"; };
 		24FAB785EC799017D07AD679 /* Pods-YPLaboratory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YPLaboratory.release.xcconfig"; path = "Target Support Files/Pods-YPLaboratory/Pods-YPLaboratory.release.xcconfig"; sourceTree = "<group>"; };
+		6013C7332A68F89100C84F36 /* YPAVCaptureSessionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPAVCaptureSessionView.m; sourceTree = "<group>"; };
+		6013C7342A68F89100C84F36 /* YPAVCaptureSessionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPAVCaptureSessionView.h; sourceTree = "<group>"; };
 		6019B7902A2E376B0083FA7F /* YPPageRouterModule+Update.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YPPageRouterModule+Update.h"; sourceTree = "<group>"; };
 		6019B7912A2E376B0083FA7F /* YPPageRouterModule+Update.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YPPageRouterModule+Update.m"; sourceTree = "<group>"; };
 		601FEB922A42F350000B703C /* YPModuleImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YPModuleImageCell.h; sourceTree = "<group>"; };
@@ -624,6 +627,8 @@
 		60C1C7682A4E85B4004FC354 /* MultifunctionalCamera */ = {
 			isa = PBXGroup;
 			children = (
+				6013C7342A68F89100C84F36 /* YPAVCaptureSessionView.h */,
+				6013C7332A68F89100C84F36 /* YPAVCaptureSessionView.m */,
 				60C1C7752A4E8745004FC354 /* Identification */,
 				60C1C7712A4E872E004FC354 /* Camera */,
 				60C1C76D2A4E86A1004FC354 /* FaceTrack */,
@@ -874,6 +879,7 @@
 				602580042A1A5FC400091000 /* YPNoticeHeader.m in Sources */,
 				6034B2E82A14A6E40024E610 /* NSObject+YPLaboratory.m in Sources */,
 				6034B2E72A14A6E40024E610 /* UIImageView+YPLaboratory.m in Sources */,
+				6013C7352A68F89100C84F36 /* YPAVCaptureSessionView.m in Sources */,
 				60C44E812A186D6F0073EA3F /* YPRouterManager.m in Sources */,
 				60FF4CBF2A1F4CBF00A2D04B /* YPPageRouterModule+AppleInternalPurchase.m in Sources */,
 				60C1C7742A4E873D004FC354 /* YPCameraViewController.m in Sources */,

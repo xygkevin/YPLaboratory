@@ -5,7 +5,7 @@
 //  Created by Hansen on 2023/7/1.
 //
 
-#import <YPUIKit/YPUIKit.h>
+#import "YPAVCaptureSessionView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
