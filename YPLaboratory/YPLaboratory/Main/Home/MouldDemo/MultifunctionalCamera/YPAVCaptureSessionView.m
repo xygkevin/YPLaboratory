@@ -27,73 +27,30 @@
     if (!self) {
         return nil;
     }
-    //判断是否支持相机
+    // 判断是否支持相机
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         return self;
     }
     _showFocusView = YES;
     _devicePosition = AVCaptureDevicePositionBack;
     _sessionPreset = AVCaptureSessionPresetPhoto;
-    //获取当前取景方向摄像头
-    self.device = [self cameraWithPosition:self.devicePosition];
-    //初始化输入设备
-    self.input = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:nil];
-    //初始化输出
-    dispatch_queue_t outputQueue;
-    outputQueue = dispatch_queue_create("WDAVCaptureSessionViewQueue", NULL);
-    NSString *key = (NSString*)kCVPixelBufferPixelFormatTypeKey;
-    NSNumber *value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA];
-    NSDictionary *videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
-    AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
-    output.alwaysDiscardsLateVideoFrames = YES;
-    [output setVideoSettings:videoSettings];
-    [output setSampleBufferDelegate:self queue:outputQueue];
-    //
-    self.output = output;
-    //
-    self.session = [[AVCaptureSession alloc] init];
-    self.session.sessionPreset = self.sessionPreset;
-    //输入输出设备结合
-    if ([self.session canAddInput:self.input]) {
-        [self.session addInput:self.input];
-    }
-    //输入输出设备结合
-    if ([self.session canAddOutput:self.output]) {
-        [self.session addOutput:self.output];
-    }
-    //预览层的生成
-    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-    self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.layer addSublayer:self.previewLayer];
-    //设置闪关灯初始状态
+    // 设置闪关灯初始状态
     _flashMode = AVCaptureFlashModeAuto;
-    //添加手势
-    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(whenTapGesture:)];
+    
+    // 获取当前取景方向摄像头
+    self.device = [self cameraWithPosition:self.devicePosition];
+    // 添加预览图
+    [self.layer addSublayer:self.previewLayer];
+    // 屏幕添加点击手势
     [self addGestureRecognizer:self.tapGestureRecognizer];
-    self.focusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    self.focusView.layer.borderWidth = 1;
-    self.focusView.layer.borderColor = [UIColor redColor].CGColor;
+    // 聚焦红框
     [self addSubview:self.focusView];
-    self.focusView.hidden = YES;
+    
     return self;
 }
 
 -(void)whenTapGesture:(UITapGestureRecognizer *)tap {
     [self focusAtPoint:[tap locationInView:tap.view]];
-}
-
-- (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    //此方法iOS 10 之后已经弃用 "Use AVCaptureDeviceDiscoverySession instead."
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-#pragma clang diagnostic pop
-    for ( AVCaptureDevice *device in devices ){
-        if ( device.position == position ){
-            return device;
-        }
-    }
-    return nil;
 }
 
 - (void)startRunning {
@@ -110,7 +67,84 @@
     self.previewLayer.frame = bounds;
 }
 
-#pragma mark - setters
+#pragma mark - setters | getters
+
+- (AVCaptureSession *)session {
+    if (!_session) {
+        _session = [[AVCaptureSession alloc] init];
+        _session.sessionPreset = self.sessionPreset;
+        if ([_session canAddInput:self.input]) {
+            [_session addInput:self.input];
+        }
+        if ([_session canAddOutput:self.output]) {
+            [_session addOutput:self.output];
+        }
+    }
+    return _session;
+}
+
+- (AVCaptureDeviceInput *)input {
+    if (!_input) {
+        _input = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:nil];
+    }
+    return _input;
+}
+
+- (AVCaptureOutput *)output {
+    if (!_output) {
+        //初始化输出
+        dispatch_queue_t outputQueue;
+        outputQueue = dispatch_queue_create("WDAVCaptureSessionViewQueue", NULL);
+        NSString *key = (NSString*)kCVPixelBufferPixelFormatTypeKey;
+        NSNumber *value = [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA];
+        NSDictionary *videoSettings = [NSDictionary dictionaryWithObject:value forKey:key];
+        AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
+        output.alwaysDiscardsLateVideoFrames = YES;
+        [output setVideoSettings:videoSettings];
+        [output setSampleBufferDelegate:self queue:outputQueue];
+        _output = output;
+    }
+    return _output;
+}
+
+- (AVCaptureVideoPreviewLayer *)previewLayer {
+    if (!_previewLayer) {
+        _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+        _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    }
+    return _previewLayer;
+}
+
+- (UITapGestureRecognizer *)tapGestureRecognizer {
+    if (!_tapGestureRecognizer) {
+        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(whenTapGesture:)];
+    }
+    return _tapGestureRecognizer;
+}
+
+- (UIView *)focusView {
+    if (!_focusView) {
+        _focusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _focusView.layer.borderWidth = 1;
+        _focusView.layer.borderColor = [UIColor redColor].CGColor;
+        _focusView.hidden = YES;
+    }
+    return _focusView;
+}
+
+- (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    //此方法iOS 10 之后已经弃用 "Use AVCaptureDeviceDiscoverySession instead."
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+#pragma clang diagnostic pop
+    for ( AVCaptureDevice *device in devices ){
+        if ( device.position == position ){
+            return device;
+        }
+    }
+    return nil;
+}
 
 - (void)setDevicePosition:(AVCaptureDevicePosition)devicePosition {
     _devicePosition = devicePosition;

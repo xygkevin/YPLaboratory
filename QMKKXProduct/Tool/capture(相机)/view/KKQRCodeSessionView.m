@@ -40,6 +40,10 @@
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
         return;
     }
+    
+    NSArray *availableMetadataObjectTypes = [self.qrcCodeOutput availableMetadataObjectTypes];
+    [self.qrcCodeOutput setMetadataObjectTypes:[availableMetadataObjectTypes copy]];
+    
     if (type == KKMetadataObjectTypeQR){
         [self.qrcCodeOutput setMetadataObjectTypes:@[
                                                      AVMetadataObjectTypeQRCode,
