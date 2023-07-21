@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 // 轮播图（YPSwiperView）
 + (NSArray *)ComponentRouters_YPSwiperView;
 
-// 多种功能的摄像机
+// 摄像机
 + (NSArray *)ComponentRouters_MultifunctionalCamera;
 
 // 系统字体

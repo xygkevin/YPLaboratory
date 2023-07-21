@@ -65,7 +65,7 @@
         dataList = [YPPageRouterModule IdeaRouters_IconBuild_Setup];
     } else if ([model.title isEqualToString:@"轮播图（YPSwiperView）".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_YPSwiperView];
-    } else if ([model.title isEqualToString:@"多种功能的摄像机".yp_localizedString]) {
+    } else if ([model.title isEqualToString:@"摄像机".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_MultifunctionalCamera];
     } else if ([model.title isEqualToString:@"系统字体".yp_localizedString]) {
         dataList = [YPPageRouterModule ComponentRouters_SystemFonts];

@@ -15,7 +15,6 @@
 #import "YPQRCodeScanViewController.h"
 #import "YPFaceTrackViewController.h"
 #import "YPCameraViewController.h"
-#import "YPIdentificationViewController.h"
 #import "YPSystemFontsTableViewCell.h"
 
 @implementation YPPageRouterModule (Component)
@@ -128,7 +127,7 @@
     }
     {
         YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"多种功能的摄像机".yp_localizedString;
+        element.title = @"摄像机".yp_localizedString;
         element.type = YPPageRouterTypeTable;
         [dataList addObject:element];
     }
@@ -716,7 +715,7 @@
     return @[section, section2];
 }
 
-// 多种功能的摄像机
+// 摄像机
 + (NSArray *)ComponentRouters_MultifunctionalCamera {
     NSMutableArray *dataList = [[NSMutableArray alloc] init];
     {
@@ -735,16 +734,6 @@
         element.type = YPPageRouterTypeNormal;
         element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
             YPFaceTrackViewController *vc = [[YPFaceTrackViewController alloc] init];
-            [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
-        };
-        [dataList addObject:element];
-    }
-    {
-        YPPageRouter *element = [[YPPageRouter alloc] init];
-        element.title = @"身份证拍照".yp_localizedString;
-        element.type = YPPageRouterTypeNormal;
-        element.didSelectedCallback = ^(YPPageRouter * _Nonnull router, UIView * _Nonnull cell) {
-            YPIdentificationViewController *vc = [[YPIdentificationViewController alloc] init];
             [[UIViewController yp_topViewController] presentViewController:vc animated:YES completion:nil];
         };
         [dataList addObject:element];
