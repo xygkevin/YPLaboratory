@@ -6,8 +6,11 @@
 //
 
 #import "YPCameraViewController.h"
+#import "YPCameraCaptureSessionView.h"
 
-@interface YPCameraViewController ()
+@interface YPCameraViewController () <AVCaptureMetadataOutputObjectsDelegate>
+
+@property (nonatomic, strong) YPCameraCaptureSessionView *sessionView;
 
 @end
 
@@ -16,16 +19,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        return;
+    }
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    if (authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied) {
+        return;
+    }
+    
+    [self.view addSubview:self.sessionView];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.sessionView startRunning];
+    });
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    CGRect bounds = self.view.bounds;
+    CGRect f1 = bounds;
+    self.sessionView.frame = f1;
 }
-*/
+
+#pragma mark - getters | setters
+
+- (YPCameraCaptureSessionView *)sessionView {
+    if (!_sessionView) {
+        _sessionView = [[YPCameraCaptureSessionView alloc] init];
+        _sessionView.showFocusView = NO;
+    }
+    return _sessionView;
+}
 
 @end
